@@ -1,0 +1,125 @@
+{
+    "mensajesBorrar" :{
+        "cabeceraBorrar": "Borrar.",
+        "Mensajeborra": "La nota se ha eliminado correctamente.",
+        "preguntaBorrar": "¿Estás segura de que quieres eliminarlo?",
+        "errorBorrar": "Se produjo un error al eliminar la nota.",
+        "aceptar": "Aceptar",
+        "cancelar": "Cancelar"
+    },
+    "cargarDatos":{
+        "mensajeError": "Error al cargar los datos.",
+        "loading": "Cargando ..."
+    },
+    "buscar":{
+        "error": "la busqueda ha fallado.",
+        "mensajeBarBuscar": "Escribe algo para buscar."
+    },
+    "infinito":{
+        "mensajeCarga" : "Cargar mas elementos."
+    },
+    "listado":{
+        "titulo":"Notas",
+        "tituloNota":"Título",
+        "descripcion":"Descripción",
+        "fechaCreacion":"Creation date",
+        "fechaLimite": "Fecha de límite",
+        "latitud": "Latitude",
+        "longitud": "Longitud",
+        "hora":"Hora límite"
+     },
+     "formularioNota":{
+        "cabecera" :"Añadir tarea",
+        "btnPosision": "Obtener posición",
+        "btnAgnadir": "Añadir",
+        "descripcion":"descripción",
+        "titulo":"titulo",
+        "latitud": "latitud",
+        "longitud": "longitud",
+        "fechaLimite": "Fecha límite: (formato DD / MM / AAAA)" ,
+        "notaGuardada": "Nota guardada",
+        "errorGuardarNota": "Error guardando nota",
+        "hora": "Hora límite"
+     },
+     "editarNota":{
+        "cabecera" :"Editar tarea.",
+        "notaEditada" :"Nota editada.",
+        "errorEditado":"Error editando nota.",
+        "btnEditar": "Editar nota"
+     },
+     "geo":{
+        "errorPrecisionPermiso":"Error no se ha podido otorgar el permiso.",
+        "obteniendoPosicion": "Obteniendo posición ...",
+        "btnObtenerPosicion": "Obtener posición.",
+        "errorPosicion": "Se ha producido un error al obtener la posición. Comprueba que este activada la ubicación y configurada en alta precisión."
+      },
+      "logout":{
+        "errorLogout": "No ha sido posible cerrar sesión."
+      },
+      "login":{
+        "errorConexion" : "No se ha podido hacer login compruebe la conexión.",
+        "errorLogin": "Se ha producido un error al hacer login."
+      },
+      "idiomas":{
+        "es": "español",
+        "gb": "inglés"
+      },
+      "ordando":{
+        "cabecera":"Ordenado por",
+        "fechaLimte":"fecha límite",
+        "fechaCreacion":"fecha creación",
+        "titulo":"titulo"
+      },
+      "menu":{
+        "titulo":"Menú ajustes"
+      },
+      "opcionesIdioma":{
+        "titulo": "Configurar Idioma.",
+        "es": "Español",
+        "en": "Inglés"
+      },
+      "opcionesTemas":{
+        "titulo": "Configurar tema.",
+        "oscuro":"Oscuro",
+        "claro":"Claro"
+      },
+      "opcionesVibracion":{
+        "titulo": "Configurar Vibración.",
+        "vibracion": "Activar avisos vibración"
+      },
+      "btnGuardar":{
+        "btn": "Guardar"
+      },
+      "mensajePreferencia":{
+        "errGuardar": "Se ha producido un error al guardar.",
+        "guardar":"Ajustes guardada."
+      },
+      "pestagnas":{
+        "notas": "Notas",
+        "agnadir":"Añadir",
+        "perfil":"perfil"
+      },
+      "OpOrdenarPor":{
+         "cabecera": "Ordenar por",
+         "titulo": "Título",
+         "fechaCreacion": "Fecha Creación",
+         "fechaLimite": "Fecha Límite"
+      },
+      "OpPaginado":{
+        "cabecera": "Paginación"
+      },
+      "AcCan":{
+        "Aceptar": "Aceptar",
+        "Cancelar": "Cancelar"
+     },
+     "OpBuscarPor":{
+      "cabecera": "Buscar por",
+      "btn": "Buscar por",
+      "titulo": "Título",
+      "descripcion":"Description", 
+      "fechaCreacion": "Posterior fecha Creación",
+      "fechaLimite": "Posterior fecha Límite"
+     }
+
+
+}

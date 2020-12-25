@@ -1,0 +1,61 @@
+<ion-menu side="start" menuId="first" contentId="main" (ionDidOpen)="menuAbierto()">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>{{ "menu.titulo" | translate }}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <form [formGroup]="fg" (ngSubmit)="guardarPreferencia()"> 
+        <ion-button color="primary" (click)="verOpcionesIdioma()" fill="clear" expand="block">
+          {{ "opcionesIdioma.titulo" | translate }}
+        </ion-button>
+
+        <ion-radio-group *ngIf="verIdiomas" name="auto" value="es" formControlName="idioma">
+        
+          <ion-item>
+            <ion-label>{{ "opcionesIdioma.es" | translate }}</ion-label>
+            <ion-radio value="es"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>{{ "opcionesIdioma.en" | translate }}</ion-label>
+            <ion-radio value="en"></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+
+        <ion-button (click)="verOpcionesTemas()" color="primary" expand="block" fill="clear" shape="round">
+          {{ "opcionesTemas.titulo" | translate }}
+        </ion-button>
+
+        <ion-radio-group name="auto" value="tesla" *ngIf="verTemas" formControlName="tema">
+          <ion-item>
+            <ion-label>{{"opcionesTemas.oscuro" | translate}}</ion-label>
+            <ion-radio value="dark"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>{{"opcionesTemas.claro" | translate}}</ion-label>
+            <ion-radio value="light"></ion-radio>
+          </ion-item>
+        </ion-radio-group> 
+
+        <ion-button (click)="verOpcionesVibracion()" color="primary" expand="block" fill="clear" shape="round">
+          {{ "opcionesVibracion.titulo" | translate }}
+        </ion-button>
+
+        <ion-item *ngIf="verOPvibracion">
+          <ion-label>{{ "opcionesVibracion.vibracion" | translate }}</ion-label>
+          <ion-checkbox formControlName="vibracion" color="primary">
+          </ion-checkbox>
+        </ion-item>
+
+        <div style="text-align: right;">
+          <ion-button type="submit">
+            <ion-label> {{ "btnGuardar.btn" | translate }}</ion-label>
+          </ion-button>
+        </div>
+
+      </form>
+    </ion-list>
+  </ion-content>
+</ion-menu>

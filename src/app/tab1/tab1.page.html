@@ -1,0 +1,112 @@
+<ion-header [translucent]="true">
+
+  <ion-toolbar>
+    <!-- <ion-title></ion-title> -->
+
+    <ion-item slot="start" lines="none">
+       <h1> {{ "listado.titulo" | translate }}</h1>
+      <!-- <ion-label>Awesome Label</ion-label> -->
+    </ion-item>
+
+    <ion-item slot="end" lines="none">
+      <ion-label>{{"OpOrdenarPor.cabecera" | translate}}</ion-label>
+      <ion-select (ionChange)="this.cambiarOrden($event)" 
+      [okText]="this.translate.instant('AcCan.Aceptar')" 
+      [cancelText]="this.translate.instant('AcCan.Cancelar')"
+      interface="action-sheet"
+      selectedText=" " 
+      >
+        <ion-select-option value="titulo">{{"OpOrdenarPor.titulo" | translate}}</ion-select-option>
+        <ion-select-option value="fechaCreacion">{{"OpOrdenarPor.fechaCreacion" | translate}}</ion-select-option>
+        <ion-select-option value="fechaLimite">{{"OpOrdenarPor.fechaLimite" | translate}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item slot="end" lines="none">
+      <ion-label>{{"OpPaginado.cabecera" | translate}}</ion-label>
+      <ion-select (ionChange)="this.cambiarPaginado($event)"
+      [okText]="this.translate.instant('AcCan.Aceptar')" 
+      [cancelText]="this.translate.instant('AcCan.Cancelar')"
+      interface="action-sheet"
+      >
+        <ion-select-option value="7">7</ion-select-option>
+        <ion-select-option value="10">10</ion-select-option>
+        <ion-select-option value="25">25</ion-select-option>
+        <ion-select-option value="50">50</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-toolbar>
+  <ion-toolbar>
+  
+    <ion-searchbar slot="start" [placeholder]="this.translate.instant('buscar.mensajeBarBuscar')"
+      (ionChange)="onSearchChange($event)" [debounce]="1200">
+    </ion-searchbar>
+
+    <ion-button slot="end" (click)="menuAlertBucar()"  color="primary" shape="round" >
+      {{ "OpBuscarPor.btn" | translate }}
+    </ion-button>
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-label></ion-label>
+  </ion-item>
+
+  <ion-refresher slot="fixed" (ionRefresh)="cargaDatos($event, false, true)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-list>
+
+       <div style="text-align: center;" *ngIf="this.notasS.listaNotas.length === 0">         
+         <h1> No hay elementos.</h1>
+       </div>
+    
+    <ion-item-sliding *ngFor="let nota of this.notasS.listaNotas; let i=index">
+      <ion-item-options side="start" (ionSwipe)="alertaBorrar(nota.id)">
+        <ion-item-option color="danger" expandable (click)="alertaBorrar(nota.id)">
+          <ion-icon name="trash" style="font-size: x-large;"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+
+      <ion-item>
+        <ion-label>
+          <h2><b><u>{{ "listado.tituloNota" | translate }}:</u></b> {{nota.titulo}}</h2>
+          <br><b><u>{{ "listado.descripcion" | translate }}:</u></b> {{nota.texto}}
+          <span *ngIf="nota.fechaCreacion"> <br><b><u>{{ "listado.fechaCreacion" | translate }}:</u></b>
+             {{ this.modificaFecha(nota.fechaCreacion, 'compuesta') }}</span>
+          <span *ngIf="nota.fechaLimite"> <br><b><u>{{ "listado.fechaLimite" | translate }}:</u></b>
+             {{ this.modificaFecha(nota.fechaLimite, "simple")}}</span>
+          <span *ngIf="nota.hora"> <br><b><u>{{ "listado.hora" | translate }}:</u></b> 
+            {{ this.modificaFecha(nota.hora, "hora")}}</span>
+          <span *ngIf="nota.latitud"> <br><b><u>{{ "listado.latitud" | translate }}:</u></b> {{nota.latitud}}</span>
+          <span *ngIf="nota.longitud"> <br><b><u>{{ "listado.longitud" | translate }}:</u></b> {{nota.longitud}}</span>
+        </ion-label>
+      </ion-item>
+
+      <ion-item-options side="end">
+        <ion-item-option color="primary" (click)="this.editaNota(nota)">
+          <ion-icon name="pencil" style="font-size: x-large;"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+
+    <ion-item>
+      <ion-label></ion-label>
+      <ion-label></ion-label>
+    </ion-item>
+    
+  </ion-list>
+
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content loadingSpinner="crescent"
+      [loadingText]="this.translate.instant('infinito.mensajeCarga')">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+
+
+</ion-content>

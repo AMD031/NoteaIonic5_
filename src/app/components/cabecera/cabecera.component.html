@@ -1,0 +1,31 @@
+<ion-header >
+    <ion-toolbar>
+        
+        <ion-item lines="none" slot="start">
+            <ion-avatar slot="start" *ngIf="this.authS.user.avatar">
+                <img [src]="this.authS.user.avatar" />
+            </ion-avatar>
+
+            <ion-avatar slot="start" *ngIf="!this.authS.user.avatar">
+                <img [src]="rImg" />
+            </ion-avatar>
+        </ion-item>
+    
+
+        <ion-item lines="none" *ngIf="this.authS.user.name">
+            <ion-label>{{this.authS.user.name}}</ion-label>
+        </ion-item>
+
+    
+        <ion-buttons slot="end">
+            <ion-menu-button menu="first"></ion-menu-button>
+        </ion-buttons>
+
+        <ion-button fill='outline' slot="end" (click)="this.logout()" color="success">LOGOUT</ion-button>
+    </ion-toolbar>
+
+
+
+
+
+</ion-header>
