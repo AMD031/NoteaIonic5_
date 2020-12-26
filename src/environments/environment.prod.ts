@@ -8,5 +8,6 @@ export const environment = {
     messagingSenderId: '121793034818',
     appId: '1:121793034818:web:e470fbe786253bf0fc8bdb'
   },
-  notasCollection: 'Notas'
+  notasCollection: 'Notas',
+  heroku: 'https://api1010.herokuapp.com/api/upload'
 };

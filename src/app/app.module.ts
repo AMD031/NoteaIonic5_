@@ -29,7 +29,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { CabeceraComponent } from './components/cabecera/cabecera.component';
 import { MenuPage } from './pages/menu/menu.page';
-
+import { FotoService } from './services/foto.service';
+import { Camera} from '@ionic-native/camera/ngx';
 
 export function setTranslateLoader(http: any) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -68,6 +69,8 @@ export function setTranslateLoader(http: any) {
     Vibration,
     LocationAccuracy,
     GeoService,
+    FotoService,
+    Camera,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

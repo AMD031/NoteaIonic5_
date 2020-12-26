@@ -86,7 +86,31 @@
     </ion-item>
 
 
-    <div style="text-align: right;">
+    
+    <ion-item>
+      <ion-button 
+        slot="end"
+        (click)="tomarFoto()"
+        shape="round" 
+        color="secondary"
+        fill="outline"
+        >
+        Tomar foto
+      </ion-button>
+      <ion-item size="small" lines="full">
+        <ion-img  [src]="this.imagen"></ion-img>
+      </ion-item>
+    </ion-item>
+
+    <ion-item>
+      <ion-button slot="end" (click)="guardar()" color="primary">
+        Guardar
+      </ion-button>
+    </ion-item>
+    
+   
+
+     <div style="text-align: right;">
       <ion-button 
         shape="round" 
         color="primary"

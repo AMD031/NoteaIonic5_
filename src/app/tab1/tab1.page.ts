@@ -129,7 +129,6 @@ export class Tab1Page {
       this.translate.instant('mensajesBorrar.cancelar'),
       this.translate.instant('mensajesBorrar.aceptar'),
     );
-    // console.log(resp);
     if (resp) {
       this.borraNota(id);
       // this.cargaDatos(null, true, true);

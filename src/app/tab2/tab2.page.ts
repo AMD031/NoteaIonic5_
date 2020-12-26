@@ -8,7 +8,9 @@ import * as moment from 'moment';
 import { Coordenadas } from '../model/coordenadas';
 // import { LoadingController, ToastController } from '@ionic/angular';
 import { Nota } from '../model/nota';
+import { FotoService } from '../services/foto.service';
 import { GeoService } from '../services/geo.service';
+import { GestionfotoService } from '../services/gestionfoto.service';
 import { MensajesService } from '../services/mensajes.service';
 import { NotasService } from '../services/notas.service';
 import { VibraService } from '../services/vibra.service';
@@ -27,6 +29,8 @@ export class Tab2Page {
   public tasks: FormGroup;
   public fechaLimite: any;
   public horaMinima: any;
+  private imagen: string;
+  private datosImg: '';
 
   constructor(
     private formBuilder: FormBuilder,
@@ -37,6 +41,9 @@ export class Tab2Page {
     private vibra: VibraService,
     private translate: TranslateService,
     private modalController: ModalController,
+    private foto: FotoService,
+    private fotoGS: GestionfotoService
+  
   ) {
     platform.ready().then(() => {
       if (this.platform.is('android')) {
@@ -135,11 +142,11 @@ export class Tab2Page {
       latitud: this.tasks.get('latitud').value,
       longitud: this.tasks.get('longitud').value,
       fechaLimite: fechaLimite ? moment(fechaLimite, 'YYYY-MM-DD').toDate() : '',
-      hora:  hora ? moment(hora).toDate() : '',
+      hora: hora ? moment(hora).toDate() : '',
     };
-    console.log( moment(hora).toDate() );
+    console.log(moment(hora).toDate());
 
-    if ( !this.nota?.id){
+    if (!this.nota?.id) {
       data.fechaCreacion = moment(new Date(), 'YYYY-MM-DD h:mm').toDate();
     }
 
@@ -185,6 +192,33 @@ export class Tab2Page {
     }
 
   }
+
+  async tomarFoto() {
+    try {
+      const imageData = await this.foto.tomarfoto(30);
+      const base64Image = 'data:image/jpeg;base64,' + imageData;
+      this.imagen = base64Image;
+
+
+    } catch (err) {
+      this.mensaje.presentToast('Error', 'danger');
+    }
+
+  }
+
+  guardar() {
+    if (this.imagen !== '') {
+      this.fotoGS.subirFoto(this.imagen).subscribe(
+        (resp) => {
+          console.log('respuesta' + JSON.stringify(resp));
+        });
+
+
+    }
+  }
+
+
+
 
 
 
