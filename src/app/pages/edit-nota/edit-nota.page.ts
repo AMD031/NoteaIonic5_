@@ -34,7 +34,7 @@ export class EditNotaPage {
     private mensaje: MensajesService,
     private geo: GeoService,
     private platform: Platform,
-    private translate: TranslateService
+    public translate: TranslateService
   ) {
 
     this.hoy();

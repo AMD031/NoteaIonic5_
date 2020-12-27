@@ -22,6 +22,7 @@ import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { LocationAccuracy } from '@ionic-native/location-accuracy/ngx';
 import { Vibration } from '@ionic-native/vibration/ngx';
 import { VibraService } from './services/vibra.service';
+import { HTTP } from '@ionic-native/http/ngx';
 
 /*Importamos los módulos y funciones necesarias para la traducción */
 import { TranslateModule, TranslateLoader,TranslatePipe } from '@ngx-translate/core';
@@ -71,6 +72,7 @@ export function setTranslateLoader(http: any) {
     GeoService,
     FotoService,
     Camera,
+    HTTP,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

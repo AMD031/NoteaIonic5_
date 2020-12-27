@@ -4,6 +4,7 @@ import { TranslateService } from '@ngx-translate/core';
 import * as moment from 'moment';
 import { Nota } from '../model/nota';
 import { CargaconfService } from '../services/cargaconf.service';
+import { GestionfotoService } from '../services/gestionfoto.service';
 // import { AuthService } from '../services/auth.service';
 import { MensajesService } from '../services/mensajes.service';
 import { NotasService } from '../services/notas.service';
@@ -29,12 +30,13 @@ export class Tab1Page {
 
   constructor(
     // private authS: AuthService,
-    private notasS: NotasService,
+    public notasS: NotasService,
     private modalController: ModalController,
     private mensaje: MensajesService,
     private vibra: VibraService,
-    private translate: TranslateService,
-    private conf: CargaconfService
+    public translate: TranslateService,
+    private conf: CargaconfService,
+    private fotoGS: GestionfotoService
   ) {
 
   }
@@ -118,7 +120,9 @@ export class Tab1Page {
     }
   }
   //  '¿Estás seguro que lo quieres borrar?'
-  async alertaBorrar(id: any) {
+  async alertaBorrar(id: any, idImagen: any = null) {
+
+    
     if (this.conf.preferencias.vibracion) {
       this.vibra.vibracion();
     }
@@ -130,18 +134,29 @@ export class Tab1Page {
       this.translate.instant('mensajesBorrar.aceptar'),
     );
     if (resp) {
+      if (idImagen){
+        await this.borrarImagen(idImagen);
+      }
       this.borraNota(id);
       // this.cargaDatos(null, true, true);
     }
   }
 
+  borrarImagen(id: any) {
+    return new Promise((resolve, reject) => {
+      this.fotoGS.borrarImagen(id).subscribe(
+        (res) => {
+          resolve(res);
+        });
+    });
+  }
 
-  public borraNota(id: any) {
+
+  public async borraNota(id: any) {
+
     this.notasS.borraNota(id)
       .then(() => {
-
         //  está borrada allí
-
         this.notasS.listaNotas = this.notasS.listaNotas.filter(
           (nota) => (nota.id !== id)
         );

@@ -14,11 +14,11 @@ import { TemasService } from 'src/app/services/temas.service';
 })
 export class MenuPage implements OnInit {
 
-  private verIdiomas = false;
-  private verTemas = false;
-  private verOPvibracion = false;
+  public verIdiomas = false;
+  public verTemas = false;
+  public verOPvibracion = false;
   private resulVibracion = true;
-  private fg: FormGroup;
+  public fg: FormGroup;
 
   // private preferencia: Preferencias = {
   //   idioma: 'spagnol',

@@ -9,4 +9,5 @@ export interface Nota {
     latitud?: number;
     longitud?: number;
     imagen?: any;
+    datosImagen?: any;
 }

@@ -29,8 +29,8 @@ export class Tab2Page {
   public tasks: FormGroup;
   public fechaLimite: any;
   public horaMinima: any;
-  private imagen: string;
-  private datosImg: '';
+  public imagen: string = null;
+  public datosImg: any = null;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -39,11 +39,11 @@ export class Tab2Page {
     private mensaje: MensajesService,
     private platform: Platform,
     private vibra: VibraService,
-    private translate: TranslateService,
+    public translate: TranslateService,
     private modalController: ModalController,
     private foto: FotoService,
     private fotoGS: GestionfotoService
-  
+
   ) {
     platform.ready().then(() => {
       if (this.platform.is('android')) {
@@ -133,7 +133,30 @@ export class Tab2Page {
     }
   }
 
+  private async borrarImagenExistente() {
+    if (this.nota?.id) {
+      const idImagen = this.nota?.datosImagen?.res.public_id;
+      if (idImagen) {
+        await this.borrarImagen(idImagen);
+      }
+    }
+  }
+
   public async sendForm() {
+
+    if (this.imagen) {
+      await this.borrarImagenExistente();
+      if (this.imagen) {
+        // try {
+          console.log('base64:' + this.imagen);
+
+          // this.datosImg = await this.fotoGS.subirFotoHttp(this.imagen);
+          this.datosImg = await this.guardarFoto();
+        // } catch (error) {
+        //   console.log(error);
+        // }
+      }
+    }
     const fechaLimite = this.tasks.get('fechaLimite').value;
     const hora = this.tasks.get('hora').value;
     const data: Nota = {
@@ -143,13 +166,13 @@ export class Tab2Page {
       longitud: this.tasks.get('longitud').value,
       fechaLimite: fechaLimite ? moment(fechaLimite, 'YYYY-MM-DD').toDate() : '',
       hora: hora ? moment(hora).toDate() : '',
+      datosImagen: this.datosImg ? this.datosImg : ''
     };
-    console.log(moment(hora).toDate());
+    // console.log(moment(hora).toDate());
 
     if (!this.nota?.id) {
       data.fechaCreacion = moment(new Date(), 'YYYY-MM-DD h:mm').toDate();
     }
-
 
     if (this.nota?.id) {
       //editar nota
@@ -181,6 +204,8 @@ export class Tab2Page {
             fechaLimite: '',
             hora: ''
           });
+          this.datosImg = null;
+          this.imagen = null;
           this.mensaje.hideLoading();
           this.mensaje.presentToast('Nota guardada.', 'success');
         })
@@ -197,24 +222,33 @@ export class Tab2Page {
     try {
       const imageData = await this.foto.tomarfoto(30);
       const base64Image = 'data:image/jpeg;base64,' + imageData;
+      // const base64Image = imageData;
+      console.log("imageData: " + imageData);
       this.imagen = base64Image;
-
-
     } catch (err) {
       this.mensaje.presentToast('Error', 'danger');
     }
 
   }
 
-  guardar() {
-    if (this.imagen !== '') {
-      this.fotoGS.subirFoto(this.imagen).subscribe(
-        (resp) => {
-          console.log('respuesta' + JSON.stringify(resp));
+  guardarFoto() {
+    return new Promise((resolve, reject) => {
+      if (this.imagen) {
+        this.fotoGS.subirFoto(this.imagen).subscribe(
+          (resp) => {
+            resolve(resp);
+          });
+      }
+    });
+  }
+
+  borrarImagen(id: any) {
+    return new Promise((resolve, reject) => {
+      this.fotoGS.borrarImagen(id).subscribe(
+        (res) => {
+          resolve(res);
         });
-
-
-    }
+    });
   }
 
 

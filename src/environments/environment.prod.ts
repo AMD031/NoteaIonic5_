@@ -9,5 +9,5 @@ export const environment = {
     appId: '1:121793034818:web:e470fbe786253bf0fc8bdb'
   },
   notasCollection: 'Notas',
-  heroku: 'https://api1010.herokuapp.com/api/upload'
+  heroku: 'https://api1010.herokuapp.com'
 };
