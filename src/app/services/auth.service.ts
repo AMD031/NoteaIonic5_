@@ -30,7 +30,7 @@ export class AuthService implements CanActivate {
   }
 
   async init() {
-    this.translate.setDefaultLang('es');
+    // this.translate.setDefaultLang('es');
     // console.log('AL INICIO DE LOS TIEMPOS')
     let u = null;
     try {

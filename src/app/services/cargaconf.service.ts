@@ -53,7 +53,7 @@ export class CargaconfService {
         this.temaS.enableLight();
       }
     } catch (error) {
-
+      this.mensaje.presentToast('Error' , 'danger');
     }
 
 

@@ -12,11 +12,11 @@ export class FotoService {
     ): Promise<any>{
     const options: CameraOptions = {
       quality: calidad,
-      destinationType: this.camera.DestinationType.FILE_URI,
+      destinationType: this.camera.DestinationType.DATA_URL,
       encodingType: this.camera.EncodingType.JPEG,
       mediaType: this.camera.MediaType.PICTURE,
       correctOrientation: true,
-      sourceType: this.camera.PictureSourceType.CAMERA
+      // sourceType: this.camera.PictureSourceType.CAMERA
     };
     return this.camera.getPicture(options);
   }
