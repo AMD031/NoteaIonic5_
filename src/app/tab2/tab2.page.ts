@@ -145,7 +145,10 @@ export class Tab2Page {
   public async sendForm() {
 
     if (this.imagen) {
-      await this.borrarImagenExistente();
+      if (this.nota?.datosImagen &&
+         this.nota?.datosImagen !== ''){
+         await this.borrarImagenExistente();
+      }
       if (this.imagen) {
         try {
           // console.log('base64:' + this.imagen);
