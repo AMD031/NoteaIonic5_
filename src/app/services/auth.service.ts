@@ -5,6 +5,7 @@ import { NativeStorage } from '@ionic-native/native-storage/ngx';
 import { Platform } from '@ionic/angular';
 import { TranslateService } from '@ngx-translate/core';
 import { Preferencias } from '../model/preferencias';
+import { CargaconfService } from './cargaconf.service';
 import { TemasService } from './temas.service';
 
 @Injectable({
@@ -25,7 +26,8 @@ export class AuthService implements CanActivate {
     private router: Router,
     private translate: TranslateService,
     private plataforma: Platform,
-    private temaS: TemasService
+    private temaS: TemasService,
+    private confS: CargaconfService
   ) {
   }
 
@@ -35,6 +37,10 @@ export class AuthService implements CanActivate {
     let u = null;
     try {
       u = await this.storage.getItem('user');
+      if (u) {
+        this.translate.setDefaultLang('es');
+        await this.confS.cargarConfig(u);
+      }
     } catch (err) {
       u = null;
     }

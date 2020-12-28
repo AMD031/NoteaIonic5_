@@ -7,6 +7,7 @@
         "aceptar": "Aceptar",
         "cancelar": "Cancelar"
     },
+
     "cargarDatos":{
         "mensajeError": "Error al cargar los datos.",
         "loading": "Cargando ..."
@@ -39,7 +40,9 @@
         "fechaLimite": "Fecha límite: (formato DD / MM / AAAA)" ,
         "notaGuardada": "Nota guardada",
         "errorGuardarNota": "Error guardando nota",
-        "hora": "Hora límite"
+        "hora": "Hora límite",
+        "btnFoto" :"Tomar foto"
+
      },
      "editarNota":{
         "cabecera" :"Editar tarea.",

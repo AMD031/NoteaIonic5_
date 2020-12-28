@@ -12,12 +12,9 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="false">
   <form [formGroup]="tasks" (ngSubmit)="this.sendForm()">
-    <ion-list>
-      
-
-   
+    
     <ion-item>
       <ion-input 
        type="text" 
@@ -97,7 +94,7 @@
         color="secondary"
         fill="outline"
         >
-        Tomar foto
+        {{  "formularioNota.btnFoto" | translate }}
       </ion-button>
       <ion-item size="small" lines="full">
         <ion-img *ngIf="this.imagen"  [src]="this.imagen"></ion-img>
@@ -123,10 +120,8 @@
        
       </ion-button>
     </div>
-  </ion-list>
+
   </form>
 
-  <ion-label></ion-label>
-  <ion-label></ion-label>
   
 </ion-content>

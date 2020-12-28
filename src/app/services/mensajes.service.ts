@@ -69,7 +69,7 @@ export class MensajesService {
   /**
    *  @description muestra un loading.
    */
-  async presentLoading(msg: string = 'Loading ...'): Promise<void> {
+  async presentLoading(msg: string = 'Cargando ...'): Promise<void> {
     this.hideLoading();
     this.myloading = await this.loadingController.create({
       cssClass: 'my-custom-class',

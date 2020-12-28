@@ -17,7 +17,6 @@ export class AppComponent {
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
     private authS: AuthService,
-    private confS: CargaconfService
   ) {
     this.initializeApp();
   }
@@ -27,7 +26,7 @@ export class AppComponent {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
       this.authS.init();
-      this.confS.cargarConfig();
+
     });
   }
 }

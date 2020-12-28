@@ -147,14 +147,13 @@ export class Tab2Page {
     if (this.imagen) {
       await this.borrarImagenExistente();
       if (this.imagen) {
-        // try {
-          console.log('base64:' + this.imagen);
-
+        try {
+          // console.log('base64:' + this.imagen);
           // this.datosImg = await this.fotoGS.subirFotoHttp(this.imagen);
           this.datosImg = await this.guardarFoto();
-        // } catch (error) {
-        //   console.log(error);
-        // }
+        } catch (error) {
+          console.log(error);
+        }
       }
     }
     const fechaLimite = this.tasks.get('fechaLimite').value;
@@ -176,7 +175,7 @@ export class Tab2Page {
 
     if (this.nota?.id) {
       //editar nota
-      await this.mensaje.presentLoading();
+      await this.mensaje.presentLoading(this.translate.instant('cargarDatos.loading'));
       this.notasS.actualizaNota(this.nota.id, data)
         .then((respuesta) => {
           this.mensaje.hideLoading();
@@ -207,7 +206,7 @@ export class Tab2Page {
           this.datosImg = null;
           this.imagen = null;
           this.mensaje.hideLoading();
-          this.mensaje.presentToast('Nota guardada.', 'success');
+          this.mensaje.presentToast(this.translate.instant('formularioNota.notaGuardada'), 'success');
         })
         .catch((err) => {
           console.log(err);
@@ -223,7 +222,7 @@ export class Tab2Page {
       const imageData = await this.foto.tomarfoto(30);
       const base64Image = 'data:image/jpeg;base64,' + imageData;
       // const base64Image = imageData;
-      console.log("imageData: " + imageData);
+      // console.log("imageData: " + imageData);
       this.imagen = base64Image;
     } catch (err) {
       this.mensaje.presentToast('Error', 'danger');

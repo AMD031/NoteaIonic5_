@@ -12,26 +12,29 @@ import { NotasService } from 'src/app/services/notas.service';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  public bActivo: boolean = true;
+  // public bActivo: boolean = true;
+  public btnDesactivar: boolean = false;
   constructor(
     private authS: AuthService,
     private mensaje: MensajesService,
     private router: Router,
     private notasS: NotasService,
     private translate: TranslateService,
-    private conf: CargaconfService
+    private conf: CargaconfService,
   ) {
   }
 
   ngOnInit() {
-    if (this.authS.isLogged()) {
-      this.router.navigate(['/']);
-    }
+    setTimeout(() => {
+      if (this.authS.isLogged()) {
+        this.router.navigate(['/']);
+      }
+    }, 800);
   }
 
   public async login() {
     // await this.mensaje.presentLoading('Espere ...');
-    this.bActivo = false;
+    this.btnDesactivar = true;
     this.authS.login().then(
       async (u) => {
         // await this.mensaje.loadingController.dismiss();
@@ -39,19 +42,21 @@ export class LoginPage implements OnInit {
           const rep = await this.notasS.iniciaColeccion();
           if (rep) {
             await this.cargaDatos();
-            await this.conf.cargarConfig();
+            await this.conf.cargarConfig(u);
             this.router.navigate(['/']);
           }
-          this.bActivo = true;
+          this.btnDesactivar = false;
         } else {
-          this.bActivo = true;
+          this.btnDesactivar = false;
           this.mensaje.presentToast(this.translate.instant('login.errorConexion'), 'danger');
         }
       }).catch(
         (err) => {
-          this.bActivo = true;
+          this.btnDesactivar = false;
           this.mensaje.presentToast(this.translate.instant('login.errorLogin'), 'danger');
         });
+
+
   }
 
 
@@ -61,7 +66,7 @@ export class LoginPage implements OnInit {
     try {
       await this.mensaje.presentLoading();
       const info: firebase.firestore.QuerySnapshot<firebase.firestore.DocumentData> =
-      await this.notasS.leeNotasPaginado(cantidad);
+        await this.notasS.leeNotasPaginado(cantidad);
       this.notasS.ultimoDocumento = info.docs[info.docs.length - 1];
       // Ya ha llegado del servidor
       this.mensaje.hideLoading();

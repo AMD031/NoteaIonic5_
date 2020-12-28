@@ -21,11 +21,12 @@ export class CargaconfService {
     private translate: TranslateService,
     private mensaje: MensajesService,
   ) { }
-  public async cargarConfig() {
+  public async cargarConfig(u: any) {
     try {
-      const u = await this.storage.getItem('user');
+      // const u = await this.storage.getItem('user');
       this.email = u['email'];
-      const pre = await this.storage.getItem(this.email);
+      let pre = null;
+      pre = await this.storage.getItem(this.email);
       if (pre) {
         this.preferencias = {
           idioma: pre['idioma'],
@@ -53,7 +54,7 @@ export class CargaconfService {
         this.temaS.enableLight();
       }
     } catch (error) {
-      this.mensaje.presentToast('Error' , 'danger');
+
     }
 
 

@@ -28,7 +28,6 @@
         "longitud": "Longitude",
         "hora":"Time limit"
      },
-
      "formularioNota":{
         "cabecera" :"Add task",
         "btnPosision": "Get position",
@@ -40,7 +39,8 @@
         "fechaLimite": "Deadline: (Format DD / MM / YYYY)",
         "notaGuardada": "Note saved.",
         "errorGuardarNota": "Error saving note.",
-        "hora": "Time limit"
+        "hora": "Time limit",
+        "btnFoto" :"Take photo"
      },
      "editarNota":{
         "cabecera" :"Edit task.",
