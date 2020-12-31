@@ -1,20 +1,19 @@
 import { Component, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Geoposition } from '@ionic-native/geolocation/ngx';
-// import { Vibration } from '@ionic-native/vibration/ngx';
 import { ModalController, Platform } from '@ionic/angular';
 import { TranslateService } from '@ngx-translate/core';
 import * as moment from 'moment';
 import { Coordenadas } from '../model/coordenadas';
-// import { LoadingController, ToastController } from '@ionic/angular';
 import { Nota } from '../model/nota';
+import { MapaPage } from '../pages/mapa/mapa.page';
 import { FotoService } from '../services/foto.service';
 import { GeoService } from '../services/geo.service';
 import { GestionfotoService } from '../services/gestionfoto.service';
+import { MapService } from '../services/map.service';
 import { MensajesService } from '../services/mensajes.service';
 import { NotasService } from '../services/notas.service';
 import { VibraService } from '../services/vibra.service';
-
 
 @Component({
   selector: 'app-tab2',
@@ -23,6 +22,7 @@ import { VibraService } from '../services/vibra.service';
 })
 export class Tab2Page {
   @Input('nota') nota: Nota;
+
   public fechaMinima: string;
   public bActivo: boolean = true;
   public coor: Coordenadas;
@@ -42,8 +42,7 @@ export class Tab2Page {
     public translate: TranslateService,
     private modalController: ModalController,
     private foto: FotoService,
-    private fotoGS: GestionfotoService
-
+    private fotoGS: GestionfotoService,
   ) {
     platform.ready().then(() => {
       if (this.platform.is('android')) {
@@ -78,9 +77,12 @@ export class Tab2Page {
 
 
   ionViewWillEnter() {
-    // alert(JSON.stringify(this.nota.id));
     this.hoy();
   }
+
+  ionViewDidLeave() {
+
+   }
 
   private hoy() {
     this.fechaMinima = moment(new Date()).format('YYYY-MM-DD');
@@ -224,8 +226,6 @@ export class Tab2Page {
     try {
       const imageData = await this.foto.tomarfoto(30);
       const base64Image = 'data:image/jpeg;base64,' + imageData;
-      // const base64Image = imageData;
-      // console.log("imageData: " + imageData);
       this.imagen = base64Image;
     } catch (err) {
       this.mensaje.presentToast('Error', 'danger');
@@ -253,7 +253,19 @@ export class Tab2Page {
     });
   }
 
+  public async abrirMapa(nota: Nota) {
+    const modal = await this.modalController.create({
+      component: MapaPage,
+      cssClass: 'my-custom-class',
+      componentProps: {
+        coor: this.coor
+      }
+    });
 
+    modal.onDidDismiss().then(() => {
+    });
+    return await modal.present();
+  }
 
 
 

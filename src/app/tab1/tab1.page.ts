@@ -11,6 +11,8 @@ import { NotasService } from '../services/notas.service';
 import { VibraService } from '../services/vibra.service';
 import { Tab2Page } from '../tab2/tab2.page';
 
+
+
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
@@ -119,10 +121,8 @@ export class Tab1Page {
       $event.target.complete();
     }
   }
-  //  '¿Estás seguro que lo quieres borrar?'
   async alertaBorrar(id: any, idImagen: any = null) {
 
-    
     if (this.conf.preferencias.vibracion) {
       this.vibra.vibracion();
     }

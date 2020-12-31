@@ -7,8 +7,7 @@ import { TabsPage } from './tabs.page';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { setTranslateLoader } from '../app.module';
 import { HttpClient } from '@angular/common/http';
-
-
+import { MapaPage } from '../pages/mapa/mapa.page';
 
 @NgModule({
   imports: [

@@ -1,127 +1,96 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-        
+
     <ion-title *ngIf="!this.nota?.id">
-      {{ "formularioNota.cabecera" | translate  }}
+      {{ "formularioNota.cabecera" | translate }}
     </ion-title>
 
     <ion-title *ngIf="this.nota?.id">
-      {{ "editarNota.cabecera" | translate   }}
+      {{ "editarNota.cabecera" | translate }}
     </ion-title>
-  
+
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="false">
   <form [formGroup]="tasks" (ngSubmit)="this.sendForm()">
-    
+
     <ion-item>
-      <ion-input 
-       type="text" 
-       formControlName="title"
-       [placeholder]="' (*) '+this.translate.instant('formularioNota.titulo')" 
-       >
+      <ion-input type="text" formControlName="title"
+        [placeholder]="' (*) '+this.translate.instant('formularioNota.titulo')">
       </ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-textarea  
-        formControlName="description" 
-        [placeholder]="this.translate.instant('formularioNota.descripcion')" 
-        autocapitalize="true" 
-        auto-grow="true">
+      <ion-textarea formControlName="description" [placeholder]="this.translate.instant('formularioNota.descripcion')"
+        autocapitalize="true" auto-grow="true">
       </ion-textarea>
     </ion-item>
 
-  <ion-item>
+    <ion-item>
 
-     <ion-label>
-        <ion-input 
-          [disabled]='true'
-          type="text"
-          formControlName="latitud"
-          [placeholder]="this.translate.instant('formularioNota.latitud')" >
-        </ion-input> 
+      <ion-label>
+        <ion-input [disabled]='true' type="text" formControlName="latitud"
+          [placeholder]="this.translate.instant('formularioNota.latitud')">
+        </ion-input>
         <br>
-        <ion-input 
-          [disabled]='true'
-          type="text"
-          formControlName="longitud"
-          [placeholder]="this.translate.instant('formularioNota.longitud')" 
-          >
-        </ion-input> 
+        <ion-input [disabled]='true' type="text" formControlName="longitud"
+          [placeholder]="this.translate.instant('formularioNota.longitud')">
+        </ion-input>
       </ion-label>
 
-       <ion-button slot="end"
-        [disabled]="!bActivo"
-        (click)="obtenerPosicion()"
-         shape="round" 
-         color="secondary"
+
+      <ion-button slot="end" [disabled]="!bActivo" (click)="obtenerPosicion()" shape="round" color="secondary"
+        fill="outline">
+        {{ "formularioNota.btnPosision" | translate }}
+      </ion-button>
+
+      <ion-button slot="end" [disabled]="!bActivo" *ngIf="this.coor" (click)="abrirMapa()" shape="round" color="secondary"
          fill="outline">
-         {{ "formularioNota.btnPosision" | translate  }}
-        </ion-button>
-    </ion-item>
-
-    <ion-item> 
-      <!-- <ion-label> {{ "listado.fechaLimite" | translate }}</ion-label> -->
-      <ion-datetime 
-       displayFormat="DD/MM/YYYY" 
-        max="2200" 
-       [min]="this.fechaMinima"
-       [placeholder]="' (*) '+this.translate.instant('formularioNota.fechaLimite')" 
-       formControlName="fechaLimite"
-      >
-      </ion-datetime>
-    </ion-item>
-
-    <ion-item> 
-      <ion-datetime 
-       doneText='nada'
-       displayFormat="HH:MM" 
-       [placeholder]="' (*) '+this.translate.instant('formularioNota.hora')" 
-       formControlName="hora"
-      >
-      </ion-datetime>
+        Map
+      </ion-button>
+  
     </ion-item>
 
 
-    
     <ion-item>
-      <ion-button 
-        slot="end"
-        (click)="tomarFoto()"
-        shape="round" 
-        color="secondary"
-        fill="outline"
-        >
-        {{  "formularioNota.btnFoto" | translate }}
+      <!-- <ion-label> {{ "listado.fechaLimite" | translate }}</ion-label> -->
+      <ion-datetime displayFormat="DD/MM/YYYY" max="2200" [min]="this.fechaMinima"
+        [placeholder]="' (*) '+this.translate.instant('formularioNota.fechaLimite')" formControlName="fechaLimite">
+      </ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-datetime doneText='nada' displayFormat="HH:MM"
+        [placeholder]="' (*) '+this.translate.instant('formularioNota.hora')" formControlName="hora">
+      </ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-button slot="end" (click)="tomarFoto()" shape="round" color="secondary" fill="outline">
+        {{ "formularioNota.btnFoto" | translate }}
       </ion-button>
       <ion-item size="small" lines="full">
-        <ion-img *ngIf="this.imagen"  [src]="this.imagen"></ion-img>
+        <ion-img *ngIf="this.imagen" [src]="this.imagen"></ion-img>
         <ion-img *ngIf="this.nota?.datosImagen  && !this.imagen" [src]="nota?.datosImagen?.res.secure_url"></ion-img>
       </ion-item>
     </ion-item>
 
-     <div style="text-align: right;">
-      <ion-button 
-        shape="round" 
-        color="primary"
-        fill="outline"
-        type="submit"
-        [disabled]="!tasks.valid">
-        
+    <div style="text-align: right;">
+      <ion-button shape="round" color="primary" fill="outline" type="submit" [disabled]="!tasks.valid">
+
         <span *ngIf="!this.nota?.id">
-          {{ "formularioNota.btnAgnadir" | translate  }}
+          {{ "formularioNota.btnAgnadir" | translate }}
         </span>
 
         <span *ngIf="this.nota?.id">
           {{ "editarNota.btnEditar" | translate }}
         </span>
-       
+
       </ion-button>
     </div>
 
   </form>
 
-  
 </ion-content>
+

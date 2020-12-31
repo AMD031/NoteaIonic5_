@@ -9,6 +9,7 @@ import { Tab3PageRoutingModule } from './tab3-routing.module';
 import { setTranslateLoader } from '../app.module';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { MapaPage } from '../pages/mapa/mapa.page';
 
 @NgModule({
   imports: [
@@ -26,6 +27,6 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
     RouterModule.forChild([{ path: '', component: Tab3Page }]),
     Tab3PageRoutingModule,
   ],
-  declarations: [Tab3Page]
+  declarations: [Tab3Page, MapaPage]
 })
 export class Tab3PageModule {}
