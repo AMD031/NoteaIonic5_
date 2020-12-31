@@ -22,7 +22,7 @@ import { LocationAccuracy } from '@ionic-native/location-accuracy/ngx';
 import { Vibration } from '@ionic-native/vibration/ngx';
 import { VibraService } from './services/vibra.service';
 import { HTTP } from '@ionic-native/http/ngx';
-import { TranslateModule, TranslateLoader,TranslatePipe } from '@ngx-translate/core';
+import { TranslateModule, TranslateLoader, TranslatePipe } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { CabeceraComponent } from './components/cabecera/cabecera.component';

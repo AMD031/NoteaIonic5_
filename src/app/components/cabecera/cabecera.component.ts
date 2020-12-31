@@ -21,7 +21,6 @@ export class CabeceraComponent implements OnInit {
     private translate: TranslateService,
     private temasS: TemasService
   ) {
-    // this.alertIdioma();
   }
 
   public async logout() {
@@ -37,26 +36,7 @@ export class CabeceraComponent implements OnInit {
   }
 
 
-  // async alertIdioma() {
-  //   const elementosIdiomas: Array<ElementoAlert> = [
-  //     {
-  //       name: 'espagnol',
-  //       type: 'radio',
-  //       label: 'Español',
-  //       value: 'spagnol',
-  //       checked: true,
-  //     },
-  //     {
-  //       name: 'ingles',
-  //       type: 'radio',
-  //       label: 'Inglés',
-  //       value: 'ingles',
-  //       checked: false
-  //     }
-  //   ];
-  //   const seleccion = await this.mensaje.presentAlertRadio('Idioma', elementosIdiomas);
-  //   console.log(seleccion);
-  // }
+
 
   ngOnInit() { }
 

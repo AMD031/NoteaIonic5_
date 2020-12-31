@@ -5,11 +5,11 @@
 
     <ion-item slot="start" lines="none">
        <h1> {{ "listado.titulo" | translate }}</h1>
-      <!-- <ion-label>Awesome Label</ion-label> -->
     </ion-item>
 
+    <!-- <ion-label>{{"OpOrdenarPor.cabecera" | translate}}</ion-label> -->
     <ion-item slot="end" lines="none">
-      <ion-label>{{"OpOrdenarPor.cabecera" | translate}}</ion-label>
+      <ion-label><ion-icon slot="start" src="assets/img/ordenar.svg" ></ion-icon></ion-label>
       <ion-select (ionChange)="this.cambiarOrden($event)" 
       [okText]="this.translate.instant('AcCan.Aceptar')" 
       [cancelText]="this.translate.instant('AcCan.Cancelar')"
@@ -22,8 +22,9 @@
       </ion-select>
     </ion-item>
 
+    <!--  {{"OpPaginado.cabecera" | translate}} -->
     <ion-item slot="end" lines="none">
-      <ion-label>{{"OpPaginado.cabecera" | translate}}</ion-label>
+      <ion-label>  <ion-icon slot="start" src="assets/img/cantidad.svg" size="large"></ion-icon>  </ion-label>
       <ion-select (ionChange)="this.cambiarPaginado($event)"
       [okText]="this.translate.instant('AcCan.Aceptar')" 
       [cancelText]="this.translate.instant('AcCan.Cancelar')"
@@ -42,8 +43,9 @@
       (ionChange)="onSearchChange($event)" [debounce]="1200">
     </ion-searchbar>
 
-    <ion-button slot="end" (click)="menuAlertBucar()"  color="primary" shape="round" >
-      {{ "OpBuscarPor.btn" | translate }}
+    <ion-button slot="end" (click)="menuAlertBucar()" shape="clear" >
+      <!-- {{ "OpBuscarPor.btn" | translate }} -->
+      <ion-icon slot="start" src="assets/img/buscar.svg"></ion-icon>
     </ion-button>
 
   </ion-toolbar>

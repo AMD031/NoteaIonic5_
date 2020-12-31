@@ -189,10 +189,7 @@ export class Tab1Page {
       this.notasS.listaNotas = [];
     }
     await this.cargaDatos(null, true, true);
-
   }
-
-
 
   modificaFecha(fecha: any, modo: string): string {
     switch (modo) {

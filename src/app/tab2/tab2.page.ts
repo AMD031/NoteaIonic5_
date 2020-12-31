@@ -261,7 +261,6 @@ export class Tab2Page {
         coor: this.coor
       }
     });
-
     modal.onDidDismiss().then(() => {
     });
     return await modal.present();
