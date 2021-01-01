@@ -1,14 +1,14 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="true"> 
 
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <!-- <ion-title></ion-title> -->
 
-    <ion-item slot="start" lines="none">
+    <ion-item slot="start" lines="none" color="primary">
        <h1> {{ "listado.titulo" | translate }}</h1>
     </ion-item>
 
     <!-- <ion-label>{{"OpOrdenarPor.cabecera" | translate}}</ion-label> -->
-    <ion-item slot="end" lines="none">
+    <ion-item slot="end" lines="none" color="primary">
       <ion-label><ion-icon slot="start" src="assets/img/ordenar.svg" ></ion-icon></ion-label>
       <ion-select (ionChange)="this.cambiarOrden($event)" 
       [okText]="this.translate.instant('AcCan.Aceptar')" 
@@ -23,7 +23,7 @@
     </ion-item>
 
     <!--  {{"OpPaginado.cabecera" | translate}} -->
-    <ion-item slot="end" lines="none">
+    <ion-item slot="end" lines="none" color="primary">
       <ion-label>  <ion-icon slot="start" src="assets/img/cantidad.svg" size="large"></ion-icon>  </ion-label>
       <ion-select (ionChange)="this.cambiarPaginado($event)"
       [okText]="this.translate.instant('AcCan.Aceptar')" 
@@ -37,9 +37,9 @@
       </ion-select>
     </ion-item>
   </ion-toolbar>
-  <ion-toolbar>
-  
-    <ion-searchbar slot="start" [placeholder]="this.translate.instant('buscar.mensajeBarBuscar')"
+
+  <ion-toolbar color="primary">
+    <ion-searchbar slot="start" type="numeric" [placeholder]="this.translate.instant('buscar.mensajeBarBuscar')"
       (ionChange)="onSearchChange($event)" [debounce]="1200">
     </ion-searchbar>
 
@@ -53,7 +53,8 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-item>
+
+  <ion-item class="oscuro" >
     <ion-label></ion-label>
   </ion-item>
 
@@ -67,14 +68,14 @@
          <h1> No hay elementos.</h1>
        </div>
     
-    <ion-item-sliding *ngFor="let nota of this.notasS.listaNotas; let i=index">
+    <ion-item-sliding  *ngFor="let nota of this.notasS.listaNotas; let i=index">
       <ion-item-options side="start" (ionSwipe)="alertaBorrar(nota.id, nota?.datosImagen?.res?.public_id)">
         <ion-item-option color="danger" expandable (click)="alertaBorrar(nota.id)">
           <ion-icon name="trash" style="font-size: x-large;"></ion-icon>
         </ion-item-option>
       </ion-item-options>
 
-      <ion-item>
+      <ion-item >
         <ion-label>
           <h2><b><u>{{ "listado.tituloNota" | translate }}:</u></b> {{nota.titulo}}</h2>
           <br><b><u>{{ "listado.descripcion" | translate }}:</u></b> {{nota.texto}}

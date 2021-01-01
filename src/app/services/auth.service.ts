@@ -38,7 +38,7 @@ export class AuthService implements CanActivate {
     try {
       u = await this.storage.getItem('user');
       if (u) {
-        this.translate.setDefaultLang('es');
+        // this.translate.setDefaultLang('es');
         await this.confS.cargarConfig(u);
       }
     } catch (err) {

@@ -7,8 +7,9 @@
   <ion-content>
     <ion-list>
       <form [formGroup]="fg" (ngSubmit)="guardarPreferencia()"> 
-        <ion-button color="primary" (click)="verOpcionesIdioma()" fill="clear" expand="block">
-          {{ "opcionesIdioma.titulo" | translate }}
+
+        <ion-button color="primary" (click)="verOpcionesIdioma()"  expand="block" shape="round">
+          <ion-label>  {{ "opcionesIdioma.titulo" | translate }}</ion-label>
         </ion-button>
 
         <ion-radio-group *ngIf="verIdiomas" name="auto" value="es" formControlName="idioma">
@@ -23,8 +24,8 @@
           </ion-item>
         </ion-radio-group>
 
-        <ion-button (click)="verOpcionesTemas()" color="primary" expand="block" fill="clear" shape="round">
-          {{ "opcionesTemas.titulo" | translate }}
+        <ion-button (click)="verOpcionesTemas()" color="primary" expand="block"  shape="round">
+          <ion-label>  {{ "opcionesTemas.titulo" | translate }}</ion-label>
         </ion-button>
 
         <ion-radio-group name="auto" value="tesla" *ngIf="verTemas" formControlName="tema">
@@ -39,8 +40,8 @@
           </ion-item>
         </ion-radio-group> 
 
-        <ion-button (click)="verOpcionesVibracion()" color="primary" expand="block" fill="clear" shape="round">
-          {{ "opcionesVibracion.titulo" | translate }}
+        <ion-button  color="primary" (click)="verOpcionesVibracion()" expand="block" shape="round">
+          <ion-label>  {{ "opcionesVibracion.titulo" | translate }}</ion-label>
         </ion-button>
 
         <ion-item *ngIf="verOPvibracion">
@@ -50,7 +51,7 @@
         </ion-item>
 
         <div style="text-align: right;">
-          <ion-button type="submit">
+          <ion-button type="submit" color="success" shape="outline" >
             <ion-label> {{ "btnGuardar.btn" | translate }}</ion-label>
           </ion-button>
         </div>

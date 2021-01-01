@@ -77,14 +77,14 @@
     </ion-item>
 
     <div style="text-align: right;">
-      <ion-button shape="round" color="primary" fill="outline" type="submit" [disabled]="!tasks.valid">
+      <ion-button shape="round" color="success" fill="outline" type="submit" [disabled]="!tasks.valid">
 
         <span *ngIf="!this.nota?.id">
-          {{ "formularioNota.btnAgnadir" | translate }}
+          <ion-label> {{ "formularioNota.btnAgnadir" | translate }}</ion-label>
         </span>
 
         <span *ngIf="this.nota?.id">
-          {{ "editarNota.btnEditar" | translate }}
+          <ion-label>{{ "editarNota.btnEditar" | translate }}</ion-label>
         </span>
 
       </ion-button>
