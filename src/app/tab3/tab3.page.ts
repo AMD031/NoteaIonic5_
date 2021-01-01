@@ -22,7 +22,7 @@ export class Tab3Page {
   }
 
   ngOnInit() {
-    this.mapaS.leafletMap(30, 40, 'mapId2');
+    // this.mapaS.leafletMap(30, 40, 'mapId2');
   }
 
   // ionViewDidEnter() {
