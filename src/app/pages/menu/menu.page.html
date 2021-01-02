@@ -1,10 +1,12 @@
 <ion-menu side="start" menuId="first" contentId="main" (ionDidOpen)="menuAbierto()">
+  
   <ion-header>
     <ion-toolbar color="primary">
       <ion-title>{{ "menu.titulo" | translate }}</ion-title>
     </ion-toolbar>
   </ion-header>
-  <ion-content>
+
+  <ion-content color="primary">
     <ion-list>
       <form [formGroup]="fg" (ngSubmit)="guardarPreferencia()"> 
 

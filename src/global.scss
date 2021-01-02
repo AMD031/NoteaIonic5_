@@ -40,6 +40,7 @@
             background: transparent !important;
             -webkit-box-shadow: none !important;
             box-shadow: none !important;
+            color: white !important;
         }
 
         --ion-color-primary: #140405 !important;
@@ -102,8 +103,91 @@
             --padding-start: 4px;
             --padding-top: 4px;
         }
+        
+ 
 
+        ion-alert {
+            --backdrop-opacity: 0.5;
+            --background: #333131;
+            // --height: 100%;
+            // --max-height: 100%;
+            // --max-width: 100%;
+            // --min-height: 100%;
+            --min-width: 70%;
+            // --width: 100%;
+            
+            ion-radio {
+                --border-radius: 8px;
+                --color: #3880ff;
+                --color-checked: #3880ff;
+                --inner-border-radius: 2px
+            }
 
+            h2{
+                color: white;
+            }
+    
+            div.alert-head{
+                border-top: white solid 1px;
+                background-color: #0f0f0f;
+            }
+            
+            div.alert-radio-label{
+                color: white;
+            }
+        
+            .alert-radio-label.sc-ion-alert-md{
+               color: white;
+            }
+        
+        
+            .alert-button.alert-button-role-cancel  {
+                color: rgb(255, 255, 255);
+                background-color: rgb(105, 37, 37);
+            }
+       
+            .alert-button{
+                color: rgb(255, 255, 255);
+                background-color: rgb(7, 66, 20);
+            }
+
+         
+            
+    
+        }
+
+        ion-action-sheet {
+            --backdrop-opacity: 0.5;
+            --background: #000000;
+            --button-background: #333131;
+            --button-background-activated: #3880ff;
+            // --button-background-activated-opacity: 1;
+            // --button-background-focused: #3880ff;
+            // --button-background-focused-opacity: 1;
+            --button-background-hover: #383233;
+            --button-background-hover-opacity: 1;
+            // --button-background-selected: #3880ff;
+            // --button-background-selected-opacity: 1;
+            --button-color: #ffffff;
+            // --button-color-activated: #3880ff;
+            // --button-color-focused: #3880ff;
+            --button-color-hover: #000000;
+            // --button-color-selected: #3880ff;
+            --color: #ffffff;
+            // --height: 100%;
+            // --max-height: 100%;
+            // --max-width: 100%;
+            // --min-height: 100%;
+            // --min-width: 100%;
+            // --width: 100%;
+
+            button:hover.action-sheet-cancel {
+                color: rgb(255, 255, 255);
+                --button-background-hover:  rgb(105, 37, 37);
+            }
+
+         
+        }
        
 
         // ion-menu-button {
@@ -124,8 +208,7 @@
 
         ion-menu {
 
-          
-
+       
             // --background: #ffffff;
             // --height: 100%;
             // --max-height: 100%;
@@ -291,11 +374,209 @@
 
 :root{
     .light-theme{
+
+        --ion-color-primary:  #2f6e38 !important;
+        --ion-color-primary-rgb: 66,140,255 !important;
+        --ion-color-primary-contrast: #ffffff !important;
+        --ion-color-primary-contrast-rgb: 255,255,255 !important;
+        --ion-color-primary-shade: #3a7be0 !important;
+        --ion-color-primary-tint: #5598ff !important;
+
+
         .loading-wrapper{
             background: transparent !important;
             -webkit-box-shadow: none !important;
             box-shadow: none !important;
+            color: white !important;
         }
+
+        .oscuro{
+            --background: #2f6e38 !important;
+        }
+
+
+        ion-toolbar {
+            --background:  #2f6e38 !important;
+            --border-color: #2f6e38;
+            --border-style: solid;
+            --border-width: 8px;
+            --color: #ffffff !important;
+            --min-height: 56px;
+            --opacity: 1;
+            --padding-bottom: 4px;
+            --padding-end: 4px;
+            --padding-start: 4px;
+            --padding-top: 4px;
+        }
+
+        ion-item {
+            --background: #283a27;
+            // --background-activated: #3880ff;
+            // --background-activated-opacity: 1;
+            // --background-focused: #3880ff;
+            // --background-focused-opacity: 1;
+            // --background-hover: #3880ff;
+            // --background-hover-opacity: 1;
+            // --border-color: #3880ff;
+            // --border-radius: 8px;
+            // --border-style: solid;
+            // --border-width: 8px;
+            --color: #ffffff;
+            // --color-activated: #3880ff;
+            // --color-focused: #3880ff;
+            // --color-hover: #3880ff;
+            // --detail-icon-color: #989aa2;
+            // --detail-icon-font-size: 16px;
+            // --detail-icon-opacity: 1;
+            // --highlight-color-focused: #0cd1e8;
+            // --highlight-color-invalid: #f04141;
+            // --highlight-color-valid: #10dc60;
+            // --highlight-height: 32px;
+            // --inner-border-width: 8px;
+            // --inner-box-shadow: 4px 4px;
+            // --inner-padding-bottom: 4px;
+            // --inner-padding-end: 4px;
+            // --inner-padding-start: 4px;
+            // --inner-padding-top: 4px;
+            // --min-height: 24px;
+            // --padding-bottom: 4px;
+            // --padding-end: 4px;
+            // --padding-start: 4px;
+            // --padding-top: 4px;
+            // --ripple-color: #1e1e1e;
+            // --transition: background-color 15ms linear;
+        }
+
+        ion-searchbar {
+            --background: #8cc099;
+            // --border-radius: 2px;
+            // --box-shadow: 2px;
+            // --cancel-button-color: #3880ff;
+            // --clear-button-color: #3880ff;
+            --color: #ffffff;
+            // --icon-color: #3880ff;
+            // --placeholder-color: #3880ff;
+            // --placeholder-font-style: initial;
+            // --placeholder-font-weight: initial;
+            // --placeholder-opacity: 0.5;
+        }
+          
+        ion-tab-button {
+            // --background: #3880ff;
+            // --background-focused: #3880ff;
+            // --background-focused-opacity: 1;
+            --color: #4ae20d;
+            --color-focused: #000000;
+            --color-selected: #96c00a;
+            // --padding-bottom: 4px;
+            // --padding-end: 4px;
+            // --padding-start: 4px;
+            // --padding-top: 4px;
+            // --ripple-color: #1e1e1e;
+        }
+     ion-tab-bar {
+        --background: #2f6e38;
+       //  --border-radius: 8px;
+        --color: #ffffff;
+        ion-title {
+            --color: #fff;
+        }
+    }
+
+
+    ion-list {
+        background-color: #285c35;
+        // --background: #ffffff;
+        // --border-color: #3880ff;
+        // --border-style: solid;
+        // --border-width: 8px;
+        // --color: #3880ff;
+        // --inner-border-width: 2px;
+    }
+
+    ion-alert {
+        --backdrop-opacity: 0.5;
+        --background: #285c35;
+        // --height: 100%;
+        // --max-height: 100%;
+        // --max-width: 100%;
+        // --min-height: 100%;
+        --min-width: 70%;
+        // --width: 100%;
+
+        h2{
+            color: white;
+        }
+
+        .alert-head{
+            background-color: #0e441b;
+        }
+        
+        div.alert-radio-label{
+            color: white;
+        }
+
+        .alert-button.alert-button-role-cancel  {
+            color: rgb(255, 255, 255);
+            background-color: rgb(105, 37, 37);
+        }
+
+        .alert-button{
+            color: rgb(255, 255, 255);
+            background-color: rgb(39, 144, 62);
+        }
+
+    }
+
+
+    
+
+    ion-action-sheet {
+        --backdrop-opacity: 0.5;
+        --background:#0e441b;
+        --button-background: #2b9546;;
+        --button-background-activated: #3880ff;
+        // --button-background-activated-opacity: 1;
+        // --button-background-focused: #3880ff;
+        // --button-background-focused-opacity: 1;
+        --button-background-hover: #197c47;
+        --button-background-hover-opacity: 1;
+        // --button-background-selected: #3880ff;
+        // --button-background-selected-opacity: 1;
+        --button-color: #ffffff;
+        // --button-color-activated: #3880ff;
+        // --button-color-focused: #3880ff;
+        --button-color-hover: #000000;
+        // --button-color-selected: #3880ff;
+        --color: #ffffff;
+        // --height: 100%;
+        // --max-height: 100%;
+        // --max-width: 100%;
+        // --min-height: 100%;
+        // --min-width: 100%;
+        // --width: 100%;
+
+        button:hover.action-sheet-cancel {
+            color: rgb(255, 255, 255);
+            --button-background-hover:  rgb(105, 37, 37);
+        }
+
+    }
+
+
+
+    ion-content {
+        --background:  #285c35;
+        // --color: #3880ff;
+        // --keyboard-offset: 0px;
+        // --offset-bottom: 0px;
+        // --offset-top: 0px;
+        // --padding-bottom: 0px;
+        // --padding-end: 0px;
+        // --padding-start: 0px;
+        // --padding-top: 0px;
+    }
+    
     }
 }
 

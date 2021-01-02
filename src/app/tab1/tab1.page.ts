@@ -30,6 +30,15 @@ export class Tab1Page {
   public fin: boolean = false;
   private seleccionBuscar: number = 1;
 
+  cabeceraPaginacion: any = {
+    header: `${this.translate.instant('OpPaginado.cabecera') + ':'}`
+  };
+  cabeceraOrdenar: any = {
+    header: `${this.translate.instant('OpOrdenarPor.cabecera') + ':'}`
+  };
+
+
+
   constructor(
     // private authS: AuthService,
     public notasS: NotasService,
@@ -134,7 +143,7 @@ export class Tab1Page {
       this.translate.instant('mensajesBorrar.aceptar'),
     );
     if (resp) {
-      if (idImagen){
+      if (idImagen) {
         await this.borrarImagen(idImagen);
       }
       this.borraNota(id);
@@ -280,6 +289,7 @@ export class Tab1Page {
 
   }
 
+ 
 
 
 

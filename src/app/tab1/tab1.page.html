@@ -1,4 +1,4 @@
-<ion-header [translucent]="true"> 
+<ion-header [translucent]="true" > 
 
   <ion-toolbar color="primary">
     <!-- <ion-title></ion-title> -->
@@ -8,11 +8,13 @@
     </ion-item>
 
     <!-- <ion-label>{{"OpOrdenarPor.cabecera" | translate}}</ion-label> -->
+    
     <ion-item slot="end" lines="none" color="primary">
-      <ion-label><ion-icon slot="start" src="assets/img/ordenar.svg" ></ion-icon></ion-label>
+      <ion-label> <ion-icon slot="start" src="assets/img/ordenar.svg" ></ion-icon></ion-label>
       <ion-select (ionChange)="this.cambiarOrden($event)" 
       [okText]="this.translate.instant('AcCan.Aceptar')" 
       [cancelText]="this.translate.instant('AcCan.Cancelar')"
+      [interfaceOptions]="cabeceraOrdenar"
       interface="action-sheet"
       selectedText=" " 
       >
@@ -23,12 +25,15 @@
     </ion-item>
 
     <!--  {{"OpPaginado.cabecera" | translate}} -->
+    
     <ion-item slot="end" lines="none" color="primary">
-      <ion-label>  <ion-icon slot="start" src="assets/img/cantidad.svg" size="large"></ion-icon>  </ion-label>
+      <ion-label>  <ion-icon slot="start" src="assets/img/cantidad.svg" size="large"></ion-icon> </ion-label>
       <ion-select (ionChange)="this.cambiarPaginado($event)"
       [okText]="this.translate.instant('AcCan.Aceptar')" 
       [cancelText]="this.translate.instant('AcCan.Cancelar')"
+      [interfaceOptions]="cabeceraPaginacion"
       interface="action-sheet"
+      selectedText=" " 
       >
         <ion-select-option value="7">7</ion-select-option>
         <ion-select-option value="10">10</ion-select-option>
@@ -36,6 +41,7 @@
         <ion-select-option value="50">50</ion-select-option>
       </ion-select>
     </ion-item>
+
   </ion-toolbar>
 
   <ion-toolbar color="primary">
@@ -52,7 +58,7 @@
 
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" >
 
   <ion-item class="oscuro" >
     <ion-label></ion-label>

@@ -13,12 +13,12 @@
         </ion-item>
     
 
-        <ion-item lines="none" *ngIf="this.authS.user.name">
+        <ion-item lines="none" *ngIf="this.authS.user.name" color="primary">
             <ion-label>{{this.authS.user.name}}</ion-label>
         </ion-item>
 
     
-        <ion-buttons slot="end">
+        <ion-buttons slot="end" *ngIf="authS.isLogged()">
             <ion-menu-button menu="first"></ion-menu-button>
         </ion-buttons>
 

@@ -19,8 +19,7 @@ export class CabeceraComponent implements OnInit {
     private router: Router,
     private mensaje: MensajesService,
     private translate: TranslateService,
-    private temasS: TemasService
-  ) {
+   ) {
   }
 
   public async logout() {
