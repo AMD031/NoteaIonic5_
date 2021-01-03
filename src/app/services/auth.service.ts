@@ -50,7 +50,7 @@ export class AuthService implements CanActivate {
   }
 
   public isLogged(): boolean {
-    console.log(this.user['token']);
+    // console.log(this.user['token']);
     if (this.user.token === -1) {
       return false;
     } else {
@@ -89,7 +89,7 @@ export class AuthService implements CanActivate {
         // console.log(this.user);
       }
     } catch (err) {
-      console.log(err);
+      // console.log(err);
       this.user = {
         token: -1,
         name: '',

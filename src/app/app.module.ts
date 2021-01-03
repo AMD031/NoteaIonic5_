@@ -29,6 +29,9 @@ import { CabeceraComponent } from './components/cabecera/cabecera.component';
 import { MenuPage } from './pages/menu/menu.page';
 import { FotoService } from './services/foto.service';
 import { Camera} from '@ionic-native/camera/ngx';
+import { MapaPage } from './pages/mapa/mapa.page';
+import { NotadetalladaPage } from './pages/notadetallada/notadetallada.page';
+
 
 
 
@@ -42,8 +45,10 @@ export function setTranslateLoader(http: any) {
     AppComponent,
     CabeceraComponent,
     MenuPage,
-  ],
-  entryComponents: [],
+    NotadetalladaPage,
+    MapaPage
+    ],
+  entryComponents: [NotadetalladaPage, MapaPage],
   imports: [
     BrowserModule,
     TranslateModule.forRoot({

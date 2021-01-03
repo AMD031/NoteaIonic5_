@@ -7,6 +7,9 @@
         "aceptar": "accept",
         "cancelar": "cancel"
     },
+    "notaDetalles" :{
+      "cabecera": "Detailed note"
+    },
     "cargarDatos":{
         "mensajeError": "Error loading data.",
         "loading": "Loading ..."
@@ -26,7 +29,9 @@
         "fechaLimite": "Deadline date",
         "latitud": "Latitude",
         "longitud": "Longitude",
-        "hora":"Time limit"
+        "hora":"Time limit",
+        "detalles": "Details",
+        "noElementos": "No items"
      },
      "formularioNota":{
         "cabecera" :"Add task",

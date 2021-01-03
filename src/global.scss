@@ -43,6 +43,13 @@
             color: white !important;
         }
 
+        ion-card {
+            --background: #ffffff;
+            --color: #000102;
+        }
+
+        
+
         --ion-color-primary: #140405 !important;
         --ion-color-primary-rgb: rgb(235,35,88)!important;
         --ion-color-primary-contrast: #ffffff !important;
@@ -126,10 +133,16 @@
             h2{
                 color: white;
             }
+
+            strong{
+                color: white;
+            }
     
             div.alert-head{
                 border-top: white solid 1px;
                 background-color: #0f0f0f;
+                // padding-bottom: 1em;
+                margin-bottom: 1em;
             }
             
             div.alert-radio-label{
@@ -351,10 +364,7 @@
             // --padding-top: 4px;
         }
 
-        ion-card {
-            --background: #ffffff;
-            --color: #3880ff;
-        }
+    
     
    
      ion-tab-bar {
@@ -382,6 +392,12 @@
         --ion-color-primary-shade: #3a7be0 !important;
         --ion-color-primary-tint: #5598ff !important;
 
+        ion-card {
+            --background: #ffffff;
+            --color: #000000;
+        }
+
+        
 
         .loading-wrapper{
             background: transparent !important;
@@ -448,16 +464,16 @@
         }
 
         ion-searchbar {
-            --background: #8cc099;
+            --background: #d1ecd8;
             // --border-radius: 2px;
             // --box-shadow: 2px;
             // --cancel-button-color: #3880ff;
             // --clear-button-color: #3880ff;
-            --color: #ffffff;
+            --color: #000000;
             // --icon-color: #3880ff;
             // --placeholder-color: #3880ff;
-            // --placeholder-font-style: initial;
-            // --placeholder-font-weight: initial;
+            --placeholder-font-style: initial;
+            --placeholder-font-weight: initial;
             // --placeholder-opacity: 0.5;
         }
           
@@ -510,9 +526,14 @@
 
         .alert-head{
             background-color: #0e441b;
+            margin-bottom: 1em;
         }
         
         div.alert-radio-label{
+            color: white;
+        }
+
+        strong{
             color: white;
         }
 

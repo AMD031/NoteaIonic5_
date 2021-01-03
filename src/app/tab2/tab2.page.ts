@@ -253,12 +253,13 @@ export class Tab2Page {
     });
   }
 
-  public async abrirMapa(nota: Nota) {
+  public async abrirMapa() {
     const modal = await this.modalController.create({
       component: MapaPage,
       cssClass: 'my-custom-class',
       componentProps: {
-        coor: this.coor
+        coor: this.coor,
+        nota: this.nota
       }
     });
     modal.onDidDismiss().then(() => {

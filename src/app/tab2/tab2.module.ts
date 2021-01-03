@@ -9,7 +9,8 @@ import { Tab2PageRoutingModule } from './tab2-routing.module';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { setTranslateLoader } from '../app.module';
-import { MapaPage } from '../pages/mapa/mapa.page';
+
+
 
 @NgModule({
   imports: [
@@ -17,7 +18,7 @@ import { MapaPage } from '../pages/mapa/mapa.page';
     HttpClientModule,
     TranslateModule.forChild({
       loader: {
-        provide: TranslateLoader, 
+        provide: TranslateLoader,
         useFactory: (setTranslateLoader), deps: [HttpClient]
       }
     }),
@@ -27,6 +28,6 @@ import { MapaPage } from '../pages/mapa/mapa.page';
     ExploreContainerComponentModule,
     Tab2PageRoutingModule
   ],
-  declarations: [Tab2Page, MapaPage]
+  declarations: [Tab2Page]
 })
 export class Tab2PageModule { }

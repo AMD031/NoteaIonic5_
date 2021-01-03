@@ -45,10 +45,12 @@
         {{ "formularioNota.btnPosision" | translate }}
       </ion-button>
 
-      <ion-button slot="end" [disabled]="!bActivo" *ngIf="this.coor" (click)="abrirMapa()" shape="round" color="secondary"
+      <ion-button slot="end" [disabled]="!bActivo" *ngIf="this.coor || (this.nota?.longitud && this.nota?.latitud)" (click)="abrirMapa()" shape="round" color="secondary"
          fill="outline">
         Map
       </ion-button>
+
+
   
     </ion-item>
 

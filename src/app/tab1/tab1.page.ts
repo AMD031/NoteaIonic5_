@@ -3,6 +3,7 @@ import { /*IonInfiniteScroll,*/ IonSearchbar, ModalController } from '@ionic/ang
 import { TranslateService } from '@ngx-translate/core';
 import * as moment from 'moment';
 import { Nota } from '../model/nota';
+import { NotadetalladaPage } from '../pages/notadetallada/notadetallada.page';
 import { CargaconfService } from '../services/cargaconf.service';
 import { GestionfotoService } from '../services/gestionfoto.service';
 // import { AuthService } from '../services/auth.service';
@@ -189,6 +190,22 @@ export class Tab1Page {
     });
     return await modal.present();
   }
+
+  public async notaDetallada(nota: Nota) {
+    const modal = await this.modalController.create({
+      component: NotadetalladaPage,
+      cssClass: 'my-custom-class',
+      componentProps: {
+        nota: nota
+      }
+    });
+    return await modal.present();
+  }
+
+
+
+
+  
 
   async onSearchChange(evento) {
     // this.cargaDatos(null, false, false, 7);

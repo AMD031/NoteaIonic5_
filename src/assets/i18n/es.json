@@ -7,6 +7,9 @@
         "aceptar": "Aceptar",
         "cancelar": "Cancelar"
     },
+    "notaDetalles" :{
+      "cabecera": "Nota detallada"
+    },
 
     "cargarDatos":{
         "mensajeError": "Error al cargar los datos.",
@@ -23,11 +26,13 @@
         "titulo":"Notas",
         "tituloNota":"Título",
         "descripcion":"Descripción",
-        "fechaCreacion":"Creation date",
+        "fechaCreacion":"Fecha de creación",
         "fechaLimite": "Fecha de límite",
         "latitud": "Latitude",
         "longitud": "Longitud",
-        "hora":"Hora límite"
+        "hora":"Hora límite",
+        "detalles": "Detalles",
+        "noElementos": "No hay elementos"
      },
      "formularioNota":{
         "cabecera" :"Añadir tarea",
