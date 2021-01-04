@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit} from '@angular/core';
+import { Component, Inject, Input, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { ElementoAlert } from 'src/app/model/elementoAlert';
@@ -13,6 +13,7 @@ import { TemasService } from 'src/app/services/temas.service';
   styleUrls: ['./cabecera.component.scss'],
 })
 export class CabeceraComponent implements OnInit {
+  @Input('menu') menu: boolean = true;
   rImg: string = 'assets/img/user.svg';
   constructor(
     public authS: AuthService,

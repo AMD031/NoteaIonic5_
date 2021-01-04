@@ -1,20 +1,80 @@
+<app-cabecera [menu]="false"></app-cabecera>
 <ion-header>
   <ion-toolbar>
-    <ion-title>{{ "notaDetalles.cabecera" |translate}}</ion-title>
+    <ion-title >{{ "notaDetalles.cabecera" |translate}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
+
 <ion-content>
 
+  <ion-card>    
+    <ion-item>
+      <ion-label>
+        <h2><b><u>{{ "listado.tituloNota" | translate }}:</u></b> {{nota.titulo}}</h2>
+      </ion-label>
+    </ion-item>
+  </ion-card>
 
-      <app-mapa [lat]="this.nota?.latitud" [long]="this.nota?.longitud"  [alto]="'50%'" [ancho]="'100%'" ></app-mapa>
-   
+  <ion-card *ngIf="nota?.texto">
+    <ion-item>
+      <ion-label><b><u>{{ "listado.fechaCreacion" | translate}}:</u></b></ion-label>
+    </ion-item>
+
+    <ion-card-content *ngIf="nota?.texto">
+      {{nota?.texto}}
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="nota?.fechaLimite">
+    <ion-item>
+      <ion-label><b><u>{{ "listado.fechaLimite" | translate}}:</u></b></ion-label>
+    </ion-item>
+    
+    <ion-card-content>
+      <span *ngIf="nota.fechaLimite"> <br><b><u>{{ "listado.fechaLimite" | translate }}:</u></b>
+        {{ this.modificaFecha(nota.fechaLimite, "simple")}}</span>
+      <span *ngIf="nota.hora"> <br><b><u>{{ "listado.hora" | translate }}:</u></b>
+        {{ this.modificaFecha(nota.hora, "hora")}}</span>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="this.nota?.latitud && this.nota?.longitud">
   
-   
-
+    <ion-item>
+      <ion-label><b><u>{{ "listado.posicion" | translate}}:</u></b></ion-label>
+    </ion-item>
+    
+  </ion-card>
   
 
- 
+  <app-mapa *ngIf="this.nota?.latitud && this.nota?.longitud" [lat]="this.nota?.latitud" [long]="this.nota?.longitud"
+    [alto]="'35%'" [ancho]="'90%'">
+  </app-mapa>
+
+  <ion-card  *ngIf="nota?.datosImagen">
+    <ion-item>
+      <ion-label><b><u>{{"listado.imagen" | translate}}:</u></b></ion-label>
+    </ion-item>
+    
+    <ion-card-content>
+      <ion-img [src]="nota?.datosImagen?.res.secure_url"></ion-img>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card  *ngIf="nota?.fechaCreacion">
+    <ion-item>
+      <ion-label><b><u>{{ "listado.fechaCreacion" | translate}}:</u></b></ion-label>
+    </ion-item>
+
+    <ion-card-content>
+      <span *ngIf="nota.fechaCreacion">
+        <!-- <br><b><u>{{ "listado.fechaCreacion" | translate }}:</u></b> -->
+        <b> {{ this.modificaFecha(nota.fechaCreacion, "compuesta")}}</b>
+      </span>
+    </ion-card-content>
+    
+  </ion-card>
+
+  <!-- <p> {{nota | json}}</p> -->
 </ion-content>
-
-  

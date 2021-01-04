@@ -34,7 +34,6 @@ export class MapaPage implements OnInit {
   }
 
   ngOnInit() {
-    alert(JSON.stringify(this.nota));
     setTimeout(async () => {
       if (this.coor){
         await this.mapS.leafletMap(this.coor.latitud, this.coor.longitud);
@@ -43,9 +42,6 @@ export class MapaPage implements OnInit {
       }else if ( this.lat && this.long){
         await this.mapS.leafletMap(this.lat, this.long);
       }
-
-
-
     }, 600);
   }
 

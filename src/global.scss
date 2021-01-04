@@ -48,7 +48,9 @@
             --color: #000102;
         }
 
+
         
+
 
         --ion-color-primary: #140405 !important;
         --ion-color-primary-rgb: rgb(235,35,88)!important;
@@ -309,7 +311,7 @@
             // --inner-border-width: 2px;
         }
   
-     
+       
 
         ion-item {
             --background: #4d5253;
@@ -392,6 +394,13 @@
         --ion-color-primary-shade: #3a7be0 !important;
         --ion-color-primary-tint: #5598ff !important;
 
+        .color{
+            background-color:#2f6e38 !important;
+        }
+
+        ion-card-title {
+            --color: #000000;
+        }
         ion-card {
             --background: #ffffff;
             --color: #000000;

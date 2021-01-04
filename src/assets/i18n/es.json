@@ -23,6 +23,8 @@
         "mensajeCarga" : "Cargar mas elementos."
     },
     "listado":{
+        "imagen": "Imagen",
+        "posicion": "Posición",
         "titulo":"Notas",
         "tituloNota":"Título",
         "descripcion":"Descripción",

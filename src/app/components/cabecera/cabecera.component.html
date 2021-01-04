@@ -18,7 +18,7 @@
         </ion-item>
 
     
-        <ion-buttons slot="end" *ngIf="authS.isLogged()">
+        <ion-buttons slot="end" *ngIf="authS.isLogged() && this.menu">
             <ion-menu-button menu="first"></ion-menu-button>
         </ion-buttons>
 

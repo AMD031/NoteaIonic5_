@@ -5,5 +5,13 @@
 </ion-header>
 
 <ion-content>
-  <ion-button  [disabled]='btnDesactivar' color="primary" expand="full" (click)="this.login()">Login</ion-button>
+
+
+  <div style="text-align: center; background-color: rgb(179, 174, 174);">
+    <ion-img src="assets/img/notas.svg"></ion-img>
+  </div>
+
+  <ion-button  [disabled]='btnDesactivar' color="primary" expand="full" (click)="this.login()">  
+      <ion-icon slot="start" src="assets/img/google.svg" ></ion-icon>Login
+  </ion-button>
 </ion-content>

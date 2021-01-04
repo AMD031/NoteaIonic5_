@@ -6,6 +6,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AuthService } from './services/auth.service';
 import { CargaconfService } from './services/cargaconf.service';
 import { TranslateService } from '@ngx-translate/core';
+import { TemasService } from './services/temas.service';
 
 @Component({
   selector: 'app-root',
@@ -18,13 +19,15 @@ export class AppComponent {
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
     private authS: AuthService,
-    private translate: TranslateService
+    private translate: TranslateService,
+    private temaS: TemasService
   ) {
     this.initializeApp();
   }
 
   initializeApp() {
     this.translate.setDefaultLang('es');
+    this.temaS.enableLight();
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();

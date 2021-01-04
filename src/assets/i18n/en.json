@@ -22,6 +22,8 @@
         "mensajeCarga" : "Load more items."
     },
     "listado":{
+        "imagen": "Image",
+        "posicion": "Position",
         "titulo":"Notes",
         "tituloNota":"Title",
         "descripcion":"description",

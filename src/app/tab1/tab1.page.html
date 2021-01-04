@@ -93,8 +93,6 @@
         </ion-item-option>
       </ion-item-options>
       <!--  (click)="notaDetallada(nota: Nota)" -->
-
-
       <!-- <ion-label>
           <h2><b><u>{{ "listado.tituloNota" | translate }}:</u></b> {{nota.titulo}}</h2>
           <br><b><u>{{ "listado.descripcion" | translate }}:</u></b> {{nota.texto}}
@@ -113,7 +111,7 @@
 
         <ion-card style="width: 100%;">
           <ion-item>
-            <ion-icon name="pin" slot="start"></ion-icon>
+            <ion-icon src="assets/img/nota.svg" slot="start"></ion-icon>
             <ion-label>
               <h2><b><u>{{ "listado.tituloNota" | translate }}:</u></b> {{nota.titulo}}</h2>
             </ion-label>
@@ -133,11 +131,11 @@
             <span *ngIf="nota.hora"> <br><b><u>{{ "listado.hora" | translate }}:</u></b>
               {{ this.modificaFecha(nota.hora, "hora")}}</span>
           </ion-card-content>
-          <ion-card-content>
+          <!-- <ion-card-content>
             <span *ngIf="nota.latitud"> <br><b><u>{{ "listado.latitud" | translate }}:</u></b> {{nota.latitud}}</span>
             <span *ngIf="nota.longitud"> <br><b><u>{{ "listado.longitud" | translate }}:</u></b>
               {{nota.longitud}}</span>
-          </ion-card-content>
+          </ion-card-content> -->
         </ion-card>
       </ion-item>
 
