@@ -42,11 +42,13 @@
 
       <ion-button slot="end" [disabled]="!bActivo" (click)="obtenerPosicion()" shape="round" color="secondary"
         fill="outline">
+        <ion-icon slot="start" src="assets/img/ubicacion.svg"></ion-icon>
         {{ "formularioNota.btnPosision" | translate }}
       </ion-button>
 
       <ion-button slot="end" [disabled]="!bActivo" *ngIf="this.coor || (this.nota?.longitud && this.nota?.latitud)" (click)="abrirMapa()" shape="round" color="secondary"
          fill="outline">
+         <ion-icon slot="start" src="assets/img/mapaubicacion.svg"></ion-icon>
         Map
       </ion-button>
 
@@ -70,6 +72,7 @@
 
     <ion-item>
       <ion-button slot="end" (click)="tomarFoto()" shape="round" color="secondary" fill="outline">
+        <ion-icon slot="start" src="assets/img/foto.svg"></ion-icon>
         {{ "formularioNota.btnFoto" | translate }}
       </ion-button>
       <ion-item size="small" lines="full">

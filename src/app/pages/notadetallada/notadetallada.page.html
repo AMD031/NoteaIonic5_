@@ -39,18 +39,8 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-card *ngIf="this.nota?.latitud && this.nota?.longitud">
-  
-    <ion-item>
-      <ion-label><b><u>{{ "listado.posicion" | translate}}:</u></b></ion-label>
-    </ion-item>
-    
-  </ion-card>
-  
 
-  <app-mapa *ngIf="this.nota?.latitud && this.nota?.longitud" [lat]="this.nota?.latitud" [long]="this.nota?.longitud"
-    [alto]="'35%'" [ancho]="'90%'">
-  </app-mapa>
+  
 
   <ion-card  *ngIf="nota?.datosImagen">
     <ion-item>
@@ -61,6 +51,16 @@
       <ion-img [src]="nota?.datosImagen?.res.secure_url"></ion-img>
     </ion-card-content>
   </ion-card>
+
+
+  <ion-card *ngIf="this.nota?.latitud && this.nota?.longitud">
+    <ion-item>
+      <ion-label><b><u>{{ "listado.posicion" | translate}}:</u></b></ion-label>
+    </ion-item>
+  </ion-card>
+  <app-mapa *ngIf="this.nota?.latitud && this.nota?.longitud" [lat]="this.nota?.latitud" [long]="this.nota?.longitud"
+    [alto]="'35%'" [ancho]="'90%'">
+  </app-mapa>
 
   <ion-card  *ngIf="nota?.fechaCreacion">
     <ion-item>
@@ -73,7 +73,7 @@
         <b> {{ this.modificaFecha(nota.fechaCreacion, "compuesta")}}</b>
       </span>
     </ion-card-content>
-    
+
   </ion-card>
 
   <!-- <p> {{nota | json}}</p> -->
