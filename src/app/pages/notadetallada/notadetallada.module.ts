@@ -18,6 +18,6 @@ import { MapaPage } from '../mapa/mapa.page';
     NotadetalladaPageRoutingModule
   ],
   // entryComponents: [],
-  declarations: [NotadetalladaPage]
+  declarations: []
 })
 export class NotadetalladaPageModule {}

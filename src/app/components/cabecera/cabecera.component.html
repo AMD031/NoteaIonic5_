@@ -23,7 +23,7 @@
         </ion-buttons>
 
         <ion-button 
-            *ngIf="authS.isLogged()"
+            *ngIf="authS.isLogged() && this.btnlogout"
             fill='outline' 
             slot="end" 
             (click)="this.logout()"

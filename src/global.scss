@@ -48,7 +48,44 @@
         color: #ffffff !important;
      }
 
+     
+     .claro2{
+        color: #ffffff !important;
+        background-color: black;
+     }
 
+
+      // datepicker picker-toolbar-cancel
+    div.picker-toolbar-cancel.picker-toolbar-button.sc-ion-picker-md{
+        button{
+            border: solid 1px black;
+            color: rgb(255, 255, 255);
+            background-color: rgb(105, 37, 37);
+        }
+    }
+   
+    div.picker-toolbar-button.sc-ion-picker-md{
+        button{
+            border: solid 1px black;
+            color: rgb(255, 255, 255);
+            background-color: rgb(39, 144, 62);
+        }
+    }
+
+    .picker-toolbar.sc-ion-picker-md{
+        background-color: #181616;
+    }
+
+    .sc-ion-picker-md{
+        color: rgb(255, 255, 255);
+        background-color: #000000;
+    }
+
+    .picker-opt.picker-opt-selected{
+        color: rgb(195, 12, 12);
+    }
+
+    //fin datapicker
 
     .fondoBoton{
         background-color: #181a19;
@@ -481,8 +518,10 @@
         }
         
         .claro{
-            color: #ffffff;
+            color: #000000;
          }
+
+      
 
          .oscuroI{
             color: rgb(145, 236, 175);
@@ -728,7 +767,34 @@
 
     }
 
+    // datepicker picker-toolbar-cancel
+    div.picker-toolbar-cancel.picker-toolbar-button.sc-ion-picker-md{
+        button{
+            border: solid 1px black;
+            color: rgb(255, 255, 255);
+            background-color: rgb(105, 37, 37);
+        }
+    }
+   
+    div.picker-toolbar-button.sc-ion-picker-md{
+        button{
+            border: solid 1px black;
+            color: rgb(255, 255, 255);
+            background-color: rgb(39, 144, 62);
+        }
+    }
 
+    .picker-toolbar.sc-ion-picker-md{
+        background-color: #18251e;
+    }
+
+    .sc-ion-picker-md{
+        background-color: #b5c8be;
+    }
+
+    //fin datapicker
+
+ 
 
     ion-content {
         --background:  #285c35;

@@ -1,13 +1,11 @@
-<app-cabecera [menu]="false"></app-cabecera>
+<app-cabecera [menu]="false" [btnlogout]="false"></app-cabecera>
 
 <ion-header>
   <ion-toolbar>
-    <ion-item slot="start" class="oscuro">
-          <ion-icon  src="assets/img/informacion.svg"></ion-icon>
+    <ion-item slot="start" class="oscuro" lines="none">
+          <ion-icon class="claro" src="assets/img/informacion.svg"></ion-icon>
           <ion-title >{{ "notaDetalles.cabecera" |translate}}</ion-title>
-    
     </ion-item>
-
   </ion-toolbar>
 </ion-header>
 
@@ -16,15 +14,17 @@
 
   <ion-card>    
     <ion-item>
+      <ion-icon class="claro" slot="start" src="assets/img/titulo.svg"></ion-icon>
       <ion-label>
         <h2><b><u>{{ "listado.tituloNota" | translate }}:</u></b> {{nota.titulo}}</h2>
       </ion-label>
     </ion-item>
   </ion-card>
 
+
   <ion-card *ngIf="nota?.texto">
     <ion-item>
-      <ion-label><b><u>{{ "listado.fechaCreacion" | translate}}:</u></b></ion-label>
+      <ion-label><b><u>{{ "listado.descripcion" | translate}}:</u></b></ion-label>
     </ion-item>
 
     <ion-card-content *ngIf="nota?.texto">
@@ -34,6 +34,7 @@
 
   <ion-card *ngIf="nota?.fechaLimite">
     <ion-item>
+      <ion-icon class="claro" slot="start" src="assets/img/limite2.svg"></ion-icon>
       <ion-label><b><u>{{ "listado.fechaLimite" | translate}}:</u></b></ion-label>
     </ion-item>
     
@@ -50,6 +51,7 @@
 
   <ion-card  *ngIf="nota?.datosImagen">
     <ion-item>
+      <ion-icon class="claro" slot="start" src="assets/img/imagen.svg"></ion-icon>
       <ion-label><b><u>{{"listado.imagen" | translate}}:</u></b></ion-label>
     </ion-item>
     
@@ -61,6 +63,7 @@
 
   <ion-card *ngIf="this.nota?.latitud && this.nota?.longitud">
     <ion-item>
+      <ion-icon class="claro" slot="start" src="assets/img/marcador.svg"></ion-icon>
       <ion-label><b><u>{{ "listado.posicion" | translate}}:</u></b></ion-label>
     </ion-item>
   </ion-card>
@@ -70,6 +73,7 @@
 
   <ion-card  *ngIf="nota?.fechaCreacion">
     <ion-item>
+      <ion-icon class="claro" slot="start" src="assets/img/fechainicio.svg"></ion-icon>
       <ion-label><b><u>{{ "listado.fechaCreacion" | translate}}:</u></b></ion-label>
     </ion-item>
 
