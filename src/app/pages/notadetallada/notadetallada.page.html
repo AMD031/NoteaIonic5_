@@ -1,7 +1,13 @@
 <app-cabecera [menu]="false"></app-cabecera>
+
 <ion-header>
   <ion-toolbar>
-    <ion-title >{{ "notaDetalles.cabecera" |translate}}</ion-title>
+    <ion-item slot="start" class="oscuro">
+          <ion-icon  src="assets/img/informacion.svg"></ion-icon>
+          <ion-title >{{ "notaDetalles.cabecera" |translate}}</ion-title>
+    
+    </ion-item>
+
   </ion-toolbar>
 </ion-header>
 

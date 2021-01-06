@@ -7,7 +7,7 @@
                 <img [src]="this.authS.user.avatar" />
             </ion-avatar>
 
-            <ion-avatar slot="start" *ngIf="!this.authS.user.avatar">
+            <ion-avatar slot="start" *ngIf="!this.authS.user.avatar" class="avatarColorInvertido">
                 <img [src]="rImg" />
             </ion-avatar>
         </ion-item>
@@ -22,7 +22,14 @@
             <ion-menu-button menu="first"></ion-menu-button>
         </ion-buttons>
 
-        <ion-button fill='outline' slot="end" (click)="this.logout()" color="success">LOGOUT</ion-button>
+        <ion-button 
+            *ngIf="authS.isLogged()"
+            fill='outline' 
+            slot="end" 
+            (click)="this.logout()"
+             class="botonLogout">LOGOUT
+             
+        </ion-button>
     </ion-toolbar>
 
 

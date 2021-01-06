@@ -31,6 +31,7 @@ export class Tab2Page {
   public horaMinima: any;
   public imagen: string = null;
   public datosImg: any = null;
+  private nuevaFoto: boolean = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -145,10 +146,10 @@ export class Tab2Page {
   }
 
   public async sendForm() {
-
+    await this.mensaje.presentLoading(this.translate.instant('formularioNota.guardar'));
     if (this.imagen) {
       if (this.nota?.datosImagen &&
-         this.nota?.datosImagen !== ''){
+         this.nota?.datosImagen !== '' && this.nuevaFoto){
          await this.borrarImagenExistente();
       }
       if (this.imagen) {
@@ -170,8 +171,9 @@ export class Tab2Page {
       longitud: this.tasks.get('longitud').value,
       fechaLimite: fechaLimite ? moment(fechaLimite, 'YYYY-MM-DD').toDate() : '',
       hora: hora ? moment(hora).toDate() : '',
-      datosImagen: this.datosImg ? this.datosImg : ''
+      datosImagen: this.datosImg && this.nuevaFoto ? this.datosImg : ''
     };
+    // alert(JSON.stringify( this.datosImg));
     // console.log(moment(hora).toDate());
 
     if (!this.nota?.id) {
@@ -180,7 +182,6 @@ export class Tab2Page {
 
     if (this.nota?.id) {
       //editar nota
-      await this.mensaje.presentLoading(this.translate.instant('cargarDatos.loading'));
       this.notasS.actualizaNota(this.nota.id, data)
         .then((respuesta) => {
           this.mensaje.hideLoading();
@@ -196,7 +197,6 @@ export class Tab2Page {
 
     } else {
       // agregar nota
-      await this.mensaje.presentLoading();
       // alert(JSON.stringify(data));
       this.notasS.agregaNota(data)
         .then((respuesta) => {
@@ -227,6 +227,7 @@ export class Tab2Page {
       const imageData = await this.foto.tomarfoto(30);
       const base64Image = 'data:image/jpeg;base64,' + imageData;
       this.imagen = base64Image;
+      this.nuevaFoto = true;
     } catch (err) {
       this.mensaje.presentToast('Error', 'danger');
     }
@@ -246,10 +247,14 @@ export class Tab2Page {
 
   borrarImagen(id: any) {
     return new Promise((resolve, reject) => {
-      this.fotoGS.borrarImagen(id).subscribe(
-        (res) => {
-          resolve(res);
-        });
+      try {   
+        this.fotoGS.borrarImagen(id).subscribe(
+          (res) => {
+            resolve(res);
+          });
+      } catch (error) {
+        console.log(error);
+      }
     });
   }
 

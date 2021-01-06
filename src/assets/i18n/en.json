@@ -45,6 +45,7 @@
         "longitud": "longitude",
         "fechaLimite": "Deadline: (Format DD / MM / YYYY)",
         "notaGuardada": "Note saved.",
+        "guardar":"Saving changes",
         "errorGuardarNota": "Error saving note.",
         "hora": "Time limit",
         "btnFoto" :"Take photo"

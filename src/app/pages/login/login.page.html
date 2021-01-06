@@ -6,10 +6,13 @@
 
 <ion-content>
 
+  <ion-item>
+    <ion-label style="text-align: center;"> Notea </ion-label>
+  </ion-item>
 
-  <div style="text-align: center; background-color: rgb(179, 174, 174);">
-    <ion-img src="assets/img/notas.svg"></ion-img>
-  </div>
+  <!-- <div style="text-align: center; background-color: rgb(179, 174, 174);"> -->
+    <ion-img style="background-color: rgb(179, 174, 174); width: 100%; height: 40%; margin: auto;" src="assets/img/notas.svg"></ion-img>
+  <!-- </div> -->
 
   <ion-button  [disabled]='btnDesactivar' color="primary" expand="full" (click)="this.login()">  
       <ion-icon slot="start" src="assets/img/google.svg" ></ion-icon>Login

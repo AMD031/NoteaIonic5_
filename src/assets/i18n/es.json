@@ -46,6 +46,7 @@
         "longitud": "longitud",
         "fechaLimite": "Fecha límite: (formato DD / MM / AAAA)" ,
         "notaGuardada": "Nota guardada",
+        "guardar":"Guardando cambios",
         "errorGuardarNota": "Error guardando nota",
         "hora": "Hora límite",
         "btnFoto" :"Tomar foto"

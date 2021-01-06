@@ -4,6 +4,7 @@
     <!-- <ion-title></ion-title> -->
 
     <ion-item slot="start" lines="none" color="primary">
+      <ion-icon slot="start" src="assets/img/nota.svg"></ion-icon>
       <h1> {{ "listado.titulo" | translate }}</h1>
     </ion-item>
 
@@ -115,7 +116,8 @@
             <ion-label>
               <h2><b><u>{{ "listado.tituloNota" | translate }}:</u></b> {{nota.titulo}}</h2>
             </ion-label>
-            <ion-button fill="outline" slot="end" (click)="notaDetallada(nota)">{{ "listado.detalles" | translate }}
+
+            <ion-button class="botonDetalles" fill="outline" slot="end" (click)="notaDetallada(nota)">{{ "listado.detalles" | translate }}
             </ion-button>
           </ion-item>
 

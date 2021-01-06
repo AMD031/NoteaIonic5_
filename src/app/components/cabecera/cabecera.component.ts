@@ -1,10 +1,10 @@
 import { Component, Inject, Input, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { ElementoAlert } from 'src/app/model/elementoAlert';
+// import { ElementoAlert } from 'src/app/model/elementoAlert';
 import { AuthService } from 'src/app/services/auth.service';
 import { MensajesService } from 'src/app/services/mensajes.service';
-import { TemasService } from 'src/app/services/temas.service';
+
 
 
 @Component({

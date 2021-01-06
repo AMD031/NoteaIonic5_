@@ -8,52 +8,65 @@
 
   <ion-content color="primary">
     <ion-list>
-      <form [formGroup]="fg" (ngSubmit)="guardarPreferencia()"> 
 
-        <ion-button color="primary" (click)="verOpcionesIdioma()"  expand="block" shape="round">
+      <form [formGroup]="fg" (ngSubmit)="guardarPreferencia()"> 
+      
+        <ion-button  color="primary" (click)="verOpcionesIdioma()"  expand="block" shape="round">
+          <ion-icon   class="oscuroI" slot="start" src="assets/img/idioma.svg"></ion-icon>
           <ion-label>  {{ "opcionesIdioma.titulo" | translate }}</ion-label>
         </ion-button>
 
         <ion-radio-group *ngIf="verIdiomas" name="auto" value="es" formControlName="idioma">
         
           <ion-item>
+            <ion-icon slot="start" src="assets/img/espana.svg"></ion-icon>
             <ion-label>{{ "opcionesIdioma.es" | translate }}</ion-label>
             <ion-radio value="es"></ion-radio>
           </ion-item>
+
           <ion-item>
+            <ion-icon slot="start" src="assets/img/estados-unidos.svg"></ion-icon>
             <ion-label>{{ "opcionesIdioma.en" | translate }}</ion-label>
             <ion-radio value="en"></ion-radio>
           </ion-item>
+          
         </ion-radio-group>
 
-        <ion-button (click)="verOpcionesTemas()" color="primary" expand="block"  shape="round">
+        <ion-button  (click)="verOpcionesTemas()" color="primary" expand="block"  shape="round">
+          <ion-icon class="oscuroI" slot="start" src="assets/img/tema.svg"></ion-icon>
           <ion-label>  {{ "opcionesTemas.titulo" | translate }}</ion-label>
         </ion-button>
 
         <ion-radio-group name="auto" value="tesla" *ngIf="verTemas" formControlName="tema">
+        
           <ion-item>
+            <ion-icon class="claro" slot="start" src="assets/img/luna.svg"></ion-icon>
             <ion-label>{{"opcionesTemas.oscuro" | translate}}</ion-label>
             <ion-radio value="dark"></ion-radio>
           </ion-item>
 
           <ion-item>
+            <ion-icon class="claro" slot="start" src="assets/img/sol.svg"></ion-icon>
             <ion-label>{{"opcionesTemas.claro" | translate}}</ion-label>
-            <ion-radio value="light"></ion-radio>
+            <ion-radio  value="light"></ion-radio>
           </ion-item>
+
         </ion-radio-group> 
 
         <ion-button  color="primary" (click)="verOpcionesVibracion()" expand="block" shape="round">
+          <ion-icon  class="oscuroI" slot="start" src="assets/img/vibracion.svg"></ion-icon>
           <ion-label>  {{ "opcionesVibracion.titulo" | translate }}</ion-label>
         </ion-button>
 
         <ion-item *ngIf="verOPvibracion">
+          <ion-icon class="claro"  slot="start" src="assets/img/vibrar.svg"></ion-icon>
           <ion-label>{{ "opcionesVibracion.vibracion" | translate }}</ion-label>
           <ion-checkbox formControlName="vibracion" color="primary">
           </ion-checkbox>
         </ion-item>
 
         <div style="text-align: right;">
-          <ion-button type="submit" color="success" shape="outline" >
+          <ion-button type="submit" class="botonGuardar" shape="outline" >
             <ion-label> {{ "btnGuardar.btn" | translate }}</ion-label>
           </ion-button>
         </div>

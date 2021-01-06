@@ -282,7 +282,7 @@ export class Tab1Page {
       'Aceptar',
       ''
     );
-    console.log('respuesta: ', resp);
+    // console.log('respuesta: ', resp);
     if (resp) {
       this.buscarPor = resp;
       switch (this.buscarPor) {

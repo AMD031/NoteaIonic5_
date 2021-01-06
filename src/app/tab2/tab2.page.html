@@ -1,13 +1,19 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
 
-    <ion-title *ngIf="!this.nota?.id">
-      {{ "formularioNota.cabecera" | translate }}
-    </ion-title>
+    <ion-item slot="start" class="oscuro" *ngIf="!this.nota?.id" lines="none">
+      <ion-icon class="editado" src="assets/img/anadir.svg"></ion-icon>
+      <ion-title>
+        {{ "formularioNota.cabecera" | translate }}
+      </ion-title>
+    </ion-item>
 
-    <ion-title *ngIf="this.nota?.id">
-      {{ "editarNota.cabecera" | translate }}
-    </ion-title>
+    <ion-item slot="start" class="oscuro"  *ngIf="this.nota?.id" lines="none">
+      <ion-icon class="editado" src="assets/img/editar.svg"></ion-icon>
+      <ion-title>
+        {{ "editarNota.cabecera" | translate }}
+      </ion-title>
+    </ion-item>
 
   </ion-toolbar>
 </ion-header>
@@ -40,33 +46,55 @@
       </ion-label>
 
 
-      <ion-button slot="end" [disabled]="!bActivo" (click)="obtenerPosicion()" shape="round" color="secondary"
-        fill="outline">
-        <ion-icon slot="start" src="assets/img/ubicacion.svg"></ion-icon>
-        {{ "formularioNota.btnPosision" | translate }}
-      </ion-button>
 
-      <ion-button slot="end" [disabled]="!bActivo" *ngIf="this.coor || (this.nota?.longitud && this.nota?.latitud)" (click)="abrirMapa()" shape="round" color="secondary"
+      <ion-label slot="end">
+        <ion-button slot="end" 
+        [disabled]="!bActivo" 
+        (click)="obtenerPosicion()"
+         shape="round"
+         color="secondary"
          fill="outline">
-         <ion-icon slot="start" src="assets/img/mapaubicacion.svg"></ion-icon>
-        Map
-      </ion-button>
+          <ion-icon slot="start" src="assets/img/ubicacion.svg"></ion-icon>
+          {{ "formularioNota.btnPosision" | translate }}
+        </ion-button>
+        <br>
+
+        <ion-button slot="end" [disabled]="!bActivo" *ngIf="this.coor || (this.nota?.longitud && this.nota?.latitud)"
+          (click)="abrirMapa()" shape="round" color="secondary" fill="outline">
+          <ion-icon slot="start" src="assets/img/mapaubicacion.svg"></ion-icon>
+          Map
+        </ion-button>
+
+      </ion-label>
 
 
-  
+
+
+
+
+
     </ion-item>
 
 
     <ion-item>
       <!-- <ion-label> {{ "listado.fechaLimite" | translate }}</ion-label> -->
-      <ion-datetime displayFormat="DD/MM/YYYY" max="2200" [min]="this.fechaMinima"
-        [placeholder]="' (*) '+this.translate.instant('formularioNota.fechaLimite')" formControlName="fechaLimite">
+      <ion-datetime
+      [cancelText]="this.translate.instant('AcCan.Cancelar')"
+      [doneText]="this.translate.instant('AcCan.Aceptar')"
+       displayFormat="DD/MM/YYYY" 
+       max="2200" [min]="this.fechaMinima"
+      [placeholder]="' (*) '+this.translate.instant('formularioNota.fechaLimite')"
+       formControlName="fechaLimite">
       </ion-datetime>
     </ion-item>
 
     <ion-item>
-      <ion-datetime doneText='nada' displayFormat="HH:MM"
-        [placeholder]="' (*) '+this.translate.instant('formularioNota.hora')" formControlName="hora">
+      <ion-datetime 
+        [cancelText]="this.translate.instant('AcCan.Cancelar')"
+        [doneText]="this.translate.instant('AcCan.Aceptar')"
+        displayFormat="HH:MM"
+        [placeholder]="' (*) '+this.translate.instant('formularioNota.hora')"
+        formControlName="hora">
       </ion-datetime>
     </ion-item>
 
@@ -81,8 +109,8 @@
       </ion-item>
     </ion-item>
 
-    <div style="text-align: right;" class="color">
-      <ion-button shape="round" color="success" fill="outline" type="submit" [disabled]="!tasks.valid">
+    <div style="text-align: right;" class="fondoBoton" >
+      <ion-button shape="round" class="botonEditado" fill="outline" type="submit" [disabled]="!tasks.valid">
 
         <span *ngIf="!this.nota?.id">
           <ion-label> {{ "formularioNota.btnAgnadir" | translate }}</ion-label>
@@ -98,4 +126,3 @@
   </form>
 
 </ion-content>
-
