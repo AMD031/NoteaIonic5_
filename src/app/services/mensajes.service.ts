@@ -72,7 +72,7 @@ export class MensajesService {
   async presentLoading(msg: string = 'Cargando ...'): Promise<void> {
     this.hideLoading();
     this.myloading = await this.loadingController.create({
-      cssClass: 'my-custom-class',
+      cssClass: 'spinerOp',
       message: msg,
       spinner: 'crescent'
     });

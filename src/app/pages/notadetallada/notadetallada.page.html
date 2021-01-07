@@ -1,18 +1,22 @@
-<app-cabecera [menu]="false" [btnlogout]="false"></app-cabecera>
+<app-cabecera [menu]="false" [btnlogout]="false" [atras]="true"></app-cabecera>
 
 <ion-header>
+
+
+
   <ion-toolbar>
     <ion-item slot="start" class="oscuro" lines="none">
-          <ion-icon class="claro" src="assets/img/informacion.svg"></ion-icon>
-          <ion-title >{{ "notaDetalles.cabecera" |translate}}</ion-title>
+      <ion-icon class="claro" src="assets/img/informacion.svg"></ion-icon>
+      <ion-title>{{ "notaDetalles.cabecera" |translate}}</ion-title>
     </ion-item>
+
   </ion-toolbar>
 </ion-header>
 
 
 <ion-content>
 
-  <ion-card>    
+  <ion-card>
     <ion-item>
       <ion-icon class="claro" slot="start" src="assets/img/titulo.svg"></ion-icon>
       <ion-label>
@@ -24,6 +28,8 @@
 
   <ion-card *ngIf="nota?.texto">
     <ion-item>
+
+      <ion-icon class="claro" slot="start" src="assets/img/papel.svg"></ion-icon>
       <ion-label><b><u>{{ "listado.descripcion" | translate}}:</u></b></ion-label>
     </ion-item>
 
@@ -34,10 +40,10 @@
 
   <ion-card *ngIf="nota?.fechaLimite">
     <ion-item>
-      <ion-icon class="claro" slot="start" src="assets/img/limite2.svg"></ion-icon>
+      <ion-icon class="claro" slot="start" src="assets/img/calendarioFuego.svg"></ion-icon>
       <ion-label><b><u>{{ "listado.fechaLimite" | translate}}:</u></b></ion-label>
     </ion-item>
-    
+
     <ion-card-content>
       <span *ngIf="nota.fechaLimite"> <br><b><u>{{ "listado.fechaLimite" | translate }}:</u></b>
         {{ this.modificaFecha(nota.fechaLimite, "simple")}}</span>
@@ -47,14 +53,14 @@
   </ion-card>
 
 
-  
 
-  <ion-card  *ngIf="nota?.datosImagen">
+
+  <ion-card *ngIf="nota?.datosImagen">
     <ion-item>
       <ion-icon class="claro" slot="start" src="assets/img/imagen.svg"></ion-icon>
       <ion-label><b><u>{{"listado.imagen" | translate}}:</u></b></ion-label>
     </ion-item>
-    
+
     <ion-card-content>
       <ion-img [src]="nota?.datosImagen?.res.secure_url"></ion-img>
     </ion-card-content>
@@ -67,11 +73,13 @@
       <ion-label><b><u>{{ "listado.posicion" | translate}}:</u></b></ion-label>
     </ion-item>
   </ion-card>
-  <app-mapa *ngIf="this.nota?.latitud && this.nota?.longitud" [lat]="this.nota?.latitud" [long]="this.nota?.longitud"
+  
+  <app-mapa [cabecera]="false" *ngIf="this.nota?.latitud && this.nota?.longitud" [lat]="this.nota?.latitud" [long]="this.nota?.longitud"
     [alto]="'35%'" [ancho]="'90%'">
   </app-mapa>
 
-  <ion-card  *ngIf="nota?.fechaCreacion">
+  <ion-card *ngIf="nota?.fechaCreacion">
+
     <ion-item>
       <ion-icon class="claro" slot="start" src="assets/img/fechainicio.svg"></ion-icon>
       <ion-label><b><u>{{ "listado.fechaCreacion" | translate}}:</u></b></ion-label>

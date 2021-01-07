@@ -36,13 +36,35 @@
 
     .dark-theme{
 
-        .loading-wrapper{
-            background: transparent !important;
-            -webkit-box-shadow: none !important;
-            box-shadow: none !important;
-            color: white !important;
-        }
+        --ion-color-primary: #140405 !important;
+        --ion-color-primary-rgb: rgb(235,35,88)!important;
+        --ion-color-primary-contrast: #ffffff !important;
+        --ion-color-primary-contrast-rgb:  rgb(255,255,255)!important;
+        --ion-color-primary-shade: #cf424d !important;
+        --ion-color-primary-tint: #ed5d69 !important;
 
+   
+        --ion-color-secondary: #83b6cf !important;
+        --ion-color-secondary-rgb: 61, 194, 255 !important;
+        --ion-color-secondary-contrast: #ffffff !important;
+        --ion-color-secondary-contrast-rgb: 255, 255, 255 !important;
+        --ion-color-secondary-shade: #36abe0 !important;
+        --ion-color-secondary-tint: #50c8ff !important;
+
+
+        //.loading-wrapper{
+            // background: transparent !important;
+            // -webkit-box-shadow: none !important;
+            // box-shadow: none !important;
+            //  color:white !important;
+        //}
+
+    
+        .spinerOp{
+            --background: rgb(46, 45, 45);
+            --spinner-color: #fff;
+             color: #fff;
+          }
 
      .claro{
         color: #ffffff !important;
@@ -53,6 +75,14 @@
         color: #ffffff !important;
         background-color: black;
      }
+
+
+     .oscuroI{
+        color: #ffffff;
+    
+    }
+
+ 
 
 
       // datepicker picker-toolbar-cancel
@@ -142,21 +172,7 @@
         
 
 
-        --ion-color-primary: #140405 !important;
-        --ion-color-primary-rgb: rgb(235,35,88)!important;
-        --ion-color-primary-contrast: #ffffff !important;
-        --ion-color-primary-contrast-rgb:  rgb(255,255,255)!important;
-        --ion-color-primary-shade: #cf424d !important;
-        --ion-color-primary-tint: #ed5d69 !important;
-
-   
-        --ion-color-secondary: #83b6cf !important;
-        --ion-color-secondary-rgb: 61, 194, 255 !important;
-        --ion-color-secondary-contrast: #ffffff !important;
-        --ion-color-secondary-contrast-rgb: 255, 255, 255 !important;
-        --ion-color-secondary-shade: #36abe0 !important;
-        --ion-color-secondary-tint: #50c8ff !important;
-
+       
 
       
 
@@ -285,21 +301,6 @@
         }
        
 
-        // ion-menu-button {
-            // --background: #3880ff;
-            // --background-focused: #3880ff;
-            // --background-focused-opacity: 1;
-            // --background-hover: #3880ff;
-            // --background-hover-opacity: 1;
-            // --border-radius: 4px;
-            // --color: #3880ff;
-            // --color-focused: #3880ff;
-            // --color-hover: #3880ff;
-            // --padding-bottom: 4px;
-            // --padding-end: 4px;
-            // --padding-start: 4px;
-            // --padding-top: 4px;
-        // }
 
     
 
@@ -506,13 +507,19 @@
 
         
 
-        .loading-wrapper{
-            background: transparent !important;
-            -webkit-box-shadow: none !important;
-            box-shadow: none !important;
-            color: white !important;
-        }
+    //    .loading-wrapper{
+            // background: transparent !important;
+            // -webkit-box-shadow: none !important;
+            // box-shadow: none !important;
+            // color: white !important;
+        // }
 
+
+       .spinerOp{
+        --background: rgb(2, 61, 24);
+        --spinner-color:#ffffff;
+         color: rgb(255, 255, 255);
+      }
         .oscuro{
             --background: #2f6e38 !important;
         }

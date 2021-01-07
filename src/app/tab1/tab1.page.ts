@@ -144,11 +144,18 @@ export class Tab1Page {
       this.translate.instant('mensajesBorrar.aceptar'),
     );
     if (resp) {
-      if (idImagen) {
-        await this.borrarImagen(idImagen);
+
+      try {
+        await this.mensaje.presentLoading(this.translate.instant('listado.eliminar'));
+        if (idImagen) {
+          await this.borrarImagen(idImagen);
+        }
+        this.borraNota(id);
+        // this.cargaDatos(null, true, true);
+        this.mensaje.hideLoading();
+      } catch (error) {
+        this.mensaje.hideLoading();
       }
-      this.borraNota(id);
-      // this.cargaDatos(null, true, true);
     }
   }
 
@@ -205,7 +212,7 @@ export class Tab1Page {
 
 
 
-  
+
 
   async onSearchChange(evento) {
     // this.cargaDatos(null, false, false, 7);
@@ -306,7 +313,7 @@ export class Tab1Page {
 
   }
 
- 
+
 
 
 

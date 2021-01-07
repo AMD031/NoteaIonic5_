@@ -1,6 +1,7 @@
+<app-cabecera  *ngIf="this.nota?.id" [menu]="false" [btnlogout]="false" [atras]="true"></app-cabecera>
+
 <ion-header [translucent]="true">
   <ion-toolbar>
-
     <ion-item slot="start" class="oscuro" *ngIf="!this.nota?.id" lines="none">
       <ion-icon class="editado" src="assets/img/anadir.svg"></ion-icon>
       <ion-title>

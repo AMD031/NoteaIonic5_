@@ -6,8 +6,6 @@ import { IonicModule } from '@ionic/angular';
 
 import { NotadetalladaPageRoutingModule } from './notadetallada-routing.module';
 
-import { NotadetalladaPage } from './notadetallada.page';
-import { MapaPage } from '../mapa/mapa.page';
 
 
 @NgModule({

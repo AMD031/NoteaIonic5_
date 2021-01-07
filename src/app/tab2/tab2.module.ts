@@ -9,6 +9,7 @@ import { Tab2PageRoutingModule } from './tab2-routing.module';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { setTranslateLoader } from '../app.module';
+import { CabeceraComponent } from '../components/cabecera/cabecera.component';
 
 
 
@@ -26,8 +27,8 @@ import { setTranslateLoader } from '../app.module';
     FormsModule,
     ReactiveFormsModule,
     ExploreContainerComponentModule,
-    Tab2PageRoutingModule
+    Tab2PageRoutingModule,
   ],
-  declarations: [Tab2Page]
+  declarations: [Tab2Page, CabeceraComponent]
 })
 export class Tab2PageModule { }

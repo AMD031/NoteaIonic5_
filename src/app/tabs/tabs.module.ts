@@ -9,12 +9,13 @@ import { setTranslateLoader } from '../app.module';
 import { HttpClient } from '@angular/common/http';
 
 
+
 @NgModule({
   imports: [
     IonicModule,
     TranslateModule.forChild({
       loader: {
-        provide: TranslateLoader, 
+        provide: TranslateLoader,
         useFactory: (setTranslateLoader), deps: [HttpClient]
       }
     }),

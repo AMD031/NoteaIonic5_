@@ -34,7 +34,8 @@
         "longitud": "Longitud",
         "hora":"Hora límite",
         "detalles": "Detalles",
-        "noElementos": "No hay elementos"
+        "noElementos": "No hay elementos",
+        "eliminar":"Eliminando nota"
      },
      "formularioNota":{
         "cabecera" :"Añadir tarea",

@@ -4,6 +4,7 @@ import { Geoposition } from '@ionic-native/geolocation/ngx';
 import { ModalController, Platform } from '@ionic/angular';
 import { TranslateService } from '@ngx-translate/core';
 import * as moment from 'moment';
+import { CabeceraComponent } from '../components/cabecera/cabecera.component';
 import { Coordenadas } from '../model/coordenadas';
 import { Nota } from '../model/nota';
 import { MapaPage } from '../pages/mapa/mapa.page';
@@ -14,6 +15,8 @@ import { MapService } from '../services/map.service';
 import { MensajesService } from '../services/mensajes.service';
 import { NotasService } from '../services/notas.service';
 import { VibraService } from '../services/vibra.service';
+
+
 
 @Component({
   selector: 'app-tab2',
@@ -271,9 +274,6 @@ export class Tab2Page {
     });
     return await modal.present();
   }
-
-
-
 
 }
 

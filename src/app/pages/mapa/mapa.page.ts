@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 import { Map, latLng, tileLayer, Layer, marker, LayerGroup, layerGroup } from 'leaflet';
 import { Coordenadas } from 'src/app/model/coordenadas';
 import { Nota } from 'src/app/model/nota';
@@ -24,19 +25,21 @@ export class MapaPage implements OnInit {
   @Input('alto') alto: string = '100%';
   // tslint:disable-next-line: no-input-rename
   @Input('ancho') ancho: string = '100%';
-
-
-
+  // tslint:disable-next-line: no-input-rename
+  @Input('cabecera') cabecera: boolean = true;
 
   public map: Map;
   private markerGroup: LayerGroup = null;
-  constructor(private mapS: MapService) {
+  constructor(
+    private mapS: MapService,
+    private modalController: ModalController
+    ) {
   }
 
   ngOnInit() {
     setTimeout(async () => {
       if (this.coor){
-        await this.mapS.leafletMap(this.coor.latitud, this.coor.longitud);
+          await this.mapS.leafletMap(this.coor.latitud, this.coor.longitud);
       }else if ((this.nota?.latitud && this.nota?.longitud)){
           await this.mapS.leafletMap(this.nota?.latitud, this.nota?.longitud);
       }else if ( this.lat && this.long){
@@ -46,6 +49,8 @@ export class MapaPage implements OnInit {
   }
 
 
-
+  cerrar(){
+    this.modalController.dismiss();
+  }
 
 }

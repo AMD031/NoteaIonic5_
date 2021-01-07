@@ -33,7 +33,8 @@
         "longitud": "Longitude",
         "hora":"Time limit",
         "detalles": "Details",
-        "noElementos": "No items"
+        "noElementos": "No items",
+        "eliminar":"Deleting note"
      },
      "formularioNota":{
         "cabecera" :"Add task",

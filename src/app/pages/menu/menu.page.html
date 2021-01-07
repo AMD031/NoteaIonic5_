@@ -2,7 +2,16 @@
   
   <ion-header>
     <ion-toolbar color="primary">
-      <ion-title>{{ "menu.titulo" | translate }}</ion-title>
+ 
+      <ion-buttons slot="start" color="primary" >
+        <ion-button disabled="true" color="primary"  >
+          <ion-icon  class="oscuroI" slot="start" src="assets/img/big-gear.svg"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+
+      <ion-title>
+        {{ "menu.titulo" | translate }}
+      </ion-title>
     </ion-toolbar>
   </ion-header>
 

@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Nota } from 'src/app/model/nota';
 import { MapaPage } from '../mapa/mapa.page';
 import * as moment from 'moment';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-notadetallada',
@@ -11,7 +12,7 @@ import * as moment from 'moment';
 export class NotadetalladaPage implements OnInit {
   // tslint:disable-next-line: no-input-rename
   @Input('nota') nota: Nota;
-  constructor() { }
+  constructor(private modal: ModalController) { }
   ngOnInit() {
   }
 
@@ -29,6 +30,9 @@ export class NotadetalladaPage implements OnInit {
         break;
     }
   }
+
+
+
 
 
 }
