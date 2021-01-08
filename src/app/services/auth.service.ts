@@ -78,7 +78,7 @@ export class AuthService implements CanActivate {
     try {
       const u = await this.google.login({});
       if (u) {
-        // console.log(JSON.stringify(u)); 
+
         // console.log('OK')
         this.user = {
           token: u['accessToken'],
