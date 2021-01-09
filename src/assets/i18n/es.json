@@ -17,7 +17,8 @@
     },
     "buscar":{
         "error": "la busqueda ha fallado.",
-        "mensajeBarBuscar": "Escribe algo para buscar."
+        "mensajeBarBuscar": "Escribe algo para buscar.",
+        "formato": "Escribe una fecha con formato DDMMAAAA"
     },
     "infinito":{
         "mensajeCarga" : "Cargar mas elementos."
@@ -50,8 +51,8 @@
         "guardar":"Guardando cambios",
         "errorGuardarNota": "Error guardando nota",
         "hora": "Hora límite",
-        "btnFoto" :"Tomar foto"
-
+        "btnFoto" :"Tomar foto",
+        "btnMapa" : "Mapa"
      },
      "editarNota":{
         "cabecera" :"Editar tarea.",
@@ -128,7 +129,7 @@
       "cabecera": "Buscar por",
       "btn": "Buscar por",
       "titulo": "Título",
-      "descripcion":"Description", 
+      "descripcion":"Descripción", 
       "fechaCreacion": "Posterior fecha Creación",
       "fechaLimite": "Posterior fecha Límite"
      }

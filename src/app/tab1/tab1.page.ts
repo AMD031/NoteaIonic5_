@@ -30,7 +30,8 @@ export class Tab1Page {
   public buscarPor: string = 'titulo';
   public fin: boolean = false;
   private seleccionBuscar: number = 1;
-
+  public buscarTexto = this.translate.instant('buscar.mensajeBarBuscar');
+  public tipoTeclado = 'text';
   cabeceraPaginacion: any = {
     header: `${this.translate.instant('OpPaginado.cabecera') + ':'}`
   };
@@ -105,7 +106,7 @@ export class Tab1Page {
                 tmp = [...tmp, { id: valor.id, ...valor.data() }];
               });
             this.notasS.listaNotas = [...this.notasS.listaNotas, ...tmp];
-            console.log(this.notasS.listaNotas);
+            // console.log(this.notasS.listaNotas);
           }
           if ($event) {
             $event.target.complete();
@@ -125,14 +126,13 @@ export class Tab1Page {
   }
 
   async loadData($event = null) {
-    if (this.criterio === '') {
+    if (this.criterio === '' && !this.fin) {
       await this.cargaDatos($event, false);
     } else {
       $event.target.complete();
     }
   }
   async alertaBorrar(id: any, idImagen: any = null) {
-
     if (this.conf.preferencias.vibracion) {
       this.vibra.vibracion();
     }
@@ -217,6 +217,7 @@ export class Tab1Page {
   async onSearchChange(evento) {
     // this.cargaDatos(null, false, false, 7);
     this.criterio = evento.target.value;
+    this.criterio = this.criterio.trim();
     if (this.criterio !== '') {
       this.notasS.ultimoDocumento = null;
       this.notasS.listaNotas = [];
@@ -294,25 +295,45 @@ export class Tab1Page {
       this.buscarPor = resp;
       switch (this.buscarPor) {
         case 'titulo':
+          this.tipoTeclado = 'text';
           this.seleccionBuscar = 1;
+          this.barraBusqueda.value = '';
+          this.buscarTexto = this.translate.instant('buscar.mensajeBarBuscar');
           break;
         case 'texto':
+          this.tipoTeclado = 'text';
           this.seleccionBuscar = 2;
+          this.barraBusqueda.value = '';
+          this.buscarTexto = this.translate.instant('buscar.mensajeBarBuscar');
           break;
         case 'fechaCreacion':
+          this.tipoTeclado = 'numeric';
           this.seleccionBuscar = 3;
+          this.barraBusqueda.value = '';
+          this.buscarTexto = this.translate.instant('buscar.formato');
           break;
         case 'fechaLimite':
+          this.tipoTeclado = 'numeric';
           this.seleccionBuscar = 4;
+          this.barraBusqueda.value = '';
+          this.buscarTexto = this.translate.instant('buscar.formato');
           break;
       }
 
     } else {
-      this.buscarPor = '';
+      this.seleccionBuscar = 1;
+      this.buscarPor = 'texto';
     }
-
   }
 
+
+  acortaTexto(texto: string ){
+    let textoAcortado =  texto.slice(0, 10);
+    if ( texto .length > 10){
+     textoAcortado =  textoAcortado + '...';
+    }
+    return textoAcortado;
+  }
 
 
 

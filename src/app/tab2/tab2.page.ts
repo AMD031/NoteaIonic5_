@@ -4,7 +4,6 @@ import { Geoposition } from '@ionic-native/geolocation/ngx';
 import { ModalController, Platform } from '@ionic/angular';
 import { TranslateService } from '@ngx-translate/core';
 import * as moment from 'moment';
-import { CabeceraComponent } from '../components/cabecera/cabecera.component';
 import { Coordenadas } from '../model/coordenadas';
 import { Nota } from '../model/nota';
 import { MapaPage } from '../pages/mapa/mapa.page';
@@ -76,6 +75,7 @@ export class Tab2Page {
       this.tasks.get('longitud').setValue(this.nota.longitud);
       this.tasks.get('fechaLimite').setValue(moment.unix(this.nota.fechaLimite.seconds).format('YYYY-MM-DD'));
       this.tasks.get('hora').setValue(moment.unix(this.nota.hora.seconds).format());
+      this.datosImg = this.nota.datosImagen;
     }
   }
 
@@ -142,7 +142,7 @@ export class Tab2Page {
   private async borrarImagenExistente() {
     if (this.nota?.id) {
       const idImagen = this.nota?.datosImagen?.res.public_id;
-      if (idImagen) {
+      if (idImagen && this.nuevaFoto) {
         await this.borrarImagen(idImagen);
       }
     }
@@ -174,7 +174,7 @@ export class Tab2Page {
       longitud: this.tasks.get('longitud').value,
       fechaLimite: fechaLimite ? moment(fechaLimite, 'YYYY-MM-DD').toDate() : '',
       hora: hora ? moment(hora).toDate() : '',
-      datosImagen: this.datosImg && this.nuevaFoto ? this.datosImg : ''
+      datosImagen: this.datosImg ? this.datosImg : ''
     };
     // alert(JSON.stringify( this.datosImg));
     // console.log(moment(hora).toDate());

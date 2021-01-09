@@ -25,13 +25,13 @@ import { HTTP } from '@ionic-native/http/ngx';
 import { TranslateModule, TranslateLoader, TranslatePipe } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { CabeceraComponent } from './components/cabecera/cabecera.component';
 import { MenuPage } from './pages/menu/menu.page';
 import { FotoService } from './services/foto.service';
 import { Camera} from '@ionic-native/camera/ngx';
 import { MapaPage } from './pages/mapa/mapa.page';
 import { NotadetalladaPage } from './pages/notadetallada/notadetallada.page';
-
+import { CabeceraComponent } from './components/cabecera/cabecera.component';
+import { Tab2Page } from './tab2/tab2.page';
 
 
 
@@ -43,10 +43,11 @@ export function setTranslateLoader(http: any) {
 @NgModule({
   declarations: [
     AppComponent,
-    CabeceraComponent,
     MenuPage,
     NotadetalladaPage,
-    MapaPage
+    MapaPage,
+    CabeceraComponent,
+    Tab2Page
     ],
   entryComponents: [NotadetalladaPage, MapaPage],
   imports: [

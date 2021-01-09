@@ -16,7 +16,10 @@
     },
      "buscar":{
         "error": "the search has failed..",
-        "mensajeBarBuscar": "Write something to search."
+        "mensajeBarBuscar": "Write something to search.",
+        "formato": "Write a date in the format DDMMYYYY"
+        
+
     },
     "infinito":{
         "mensajeCarga" : "Load more items."
@@ -49,7 +52,8 @@
         "guardar":"Saving changes",
         "errorGuardarNota": "Error saving note.",
         "hora": "Time limit",
-        "btnFoto" :"Take photo"
+        "btnFoto" :"Take photo",
+        "btnMapa" : "Map"
      },
      "editarNota":{
         "cabecera" :"Edit task.",

@@ -74,21 +74,20 @@ export class NotasService {
     : Promise<firebase.firestore.QuerySnapshot<firebase.firestore.DocumentData>> {
     if (criterio.length > 0) {
       if (buscarPor === 'titulo' || buscarPor === 'texto') {
-
-        return this.myCollection.ref
+           return this.myCollection.ref
           .orderBy(buscarPor)
           .startAt(criterio)
           .endAt(criterio + '\uf8ff')
           .get();
-
-      } else if(buscarPor === 'fechaCreacion' || buscarPor === 'fechaLimite') {
-        if (moment(criterio, 'DD/MM/YYYY').isValid()) {
+      } else if (buscarPor === 'fechaCreacion' || buscarPor === 'fechaLimite') {
+        if (moment(criterio, 'DDMMYYYY').isValid()) {
           return this.myCollection.ref
-          .where(buscarPor, '>=', moment(criterio, 'DD/MM/YYYY').toDate())
-          .get();
+            .where(buscarPor, '>=', moment(criterio, 'DD/MM/YYYY').toDate())
+            .get();
         } else {
           return this.myCollection.ref.where(buscarPor, '==', -1).get();
         }
+
       }
     } else {
       if (ordenarPor === 'fechaCreacion') {
@@ -111,6 +110,7 @@ export class NotasService {
       }
     }
   }
+
 
 
 

@@ -63,9 +63,8 @@
         <ion-button slot="end" [disabled]="!bActivo" *ngIf="this.coor || (this.nota?.longitud && this.nota?.latitud)"
           (click)="abrirMapa()" shape="round" color="secondary" fill="outline">
           <ion-icon slot="start" src="assets/img/mapaubicacion.svg"></ion-icon>
-          Map
+            {{"formularioNota.btnMapa" | translate }}
         </ion-button>
-
       </ion-label>
 
 

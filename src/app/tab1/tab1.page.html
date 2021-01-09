@@ -42,8 +42,12 @@
   </ion-toolbar>
 
   <ion-toolbar color="primary">
-    <ion-searchbar slot="start" type="numeric" [placeholder]="this.translate.instant('buscar.mensajeBarBuscar')"
-      (ionChange)="onSearchChange($event)" [debounce]="1200">
+    <ion-searchbar 
+    slot="start" 
+    [placeholder]="this.buscarTexto"
+    (ionChange)="onSearchChange($event)" 
+    [debounce]="1200"
+    [inputmode]="tipoTeclado">
     </ion-searchbar>
 
     <ion-button slot="end" (click)="menuAlertBucar()" shape="clear">
@@ -126,8 +130,11 @@
           </ion-card-content> -->
 
           <ion-card-content>
+
+            <span *ngIf="nota.texto"> <br><b><u>{{ "listado.descripcion" | translate }}:</u></b>
+              {{ this.acortaTexto(nota.texto) }}</span>
             <span *ngIf="nota.fechaCreacion"> <br><b><u>{{ "listado.fechaCreacion" | translate }}:</u></b>
-              {{ this.modificaFecha(nota.fechaCreacion, 'compuesta') }}</span>
+              {{ this.modificaFecha(nota.fechaCreacion, 'compuesta') }}</span>   
             <span *ngIf="nota.fechaLimite"> <br><b><u>{{ "listado.fechaLimite" | translate }}:</u></b>
               {{ this.modificaFecha(nota.fechaLimite, "simple")}}</span>
             <span *ngIf="nota.hora"> <br><b><u>{{ "listado.hora" | translate }}:</u></b>
