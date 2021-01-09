@@ -218,7 +218,7 @@
             // --max-height: 100%;
             // --max-width: 100%;
             // --min-height: 100%;
-            --min-width: 70%;
+            --min-width: 90%;
             // --width: 100%;
             
             ion-radio {
@@ -232,6 +232,36 @@
                 color: white;
             }
 
+            .alert-button-group.sc-ion-alert-md{
+                background-color: #0f0f0f;
+            }
+
+            button[role='radio']:focus{
+                .alert-radio-label.sc-ion-alert-md {
+                    color: rgb(172, 50, 50);
+                    -webkit-text-stroke-width: 0.2px;
+                    -webkit-text-stroke-color: rgb(102, 31, 31);
+                    text-shadow:
+                    1px 1px 0 #000,
+                    // -1px -1px 0 #000,  
+                    // 1px -1px 0 #000,
+                    // -1px 1px 0 #000,
+                    // 1px 1px 0 #000;
+                }
+            }
+            
+         
+            button[role='radio']{
+                .alert-radio-label.sc-ion-alert-md {
+                    color: rgb(255, 255, 255);
+                  
+                }
+            }
+    
+            .alert-radio-inner{
+                background-color: #e0f1e0;
+            }
+            
             strong{
                 color: white;
             }
@@ -240,7 +270,7 @@
                 border-top: white solid 1px;
                 background-color: #0f0f0f;
                 // padding-bottom: 1em;
-                margin-bottom: 1em;
+                // margin-bottom: 1em;
             }
             
             div.alert-radio-label{
@@ -257,6 +287,7 @@
                 background-color: rgb(105, 37, 37);
             }
        
+            
             .alert-button{
                 color: rgb(255, 255, 255);
                 background-color: rgb(7, 66, 20);
@@ -702,25 +733,63 @@
 
     ion-alert {
         --backdrop-opacity: 0.5;
-        --background: #285c35;
+        --background: #8cc499;
         // --height: 100%;
         // --max-height: 100%;
         // --max-width: 100%;
         // --min-height: 100%;
-        --min-width: 70%;
+        --min-width: 90%;
         // --width: 100%;
 
         h2{
             color: white;
         }
 
-        .alert-head{
-            background-color: #0e441b;
-            margin-bottom: 1em;
+        .alert-radio-icon {
+            background-color: white;
         }
+        div.alert-head{
+            background-color: #0e441b;
+            // margin-bottom: 1em;
+        }
+
+        // button[role='radio']:focus{
+        //     .alert-radio-label.sc-ion-alert-md {
+        //         color: rgb(253, 253, 253);
+        //     }
+        // }
         
+        .alert-button-group.sc-ion-alert-md{
+            background-color: rgb(34, 97, 53);
+        }
+
+        button[role='radio']:focus{
+            .alert-radio-label.sc-ion-alert-md {
+                 color: rgb(255, 255, 255);
+                -webkit-text-stroke-width: 0.25px;
+                -webkit-text-stroke-color: rgb(102, 31, 31);
+                text-shadow:
+                1px 1px 0 rgb(3, 48, 18),
+                // -1px -1px 0 #000,  
+                // 1px -1px 0 #000,
+                // -1px 1px 0 #000,
+                // 1px 1px 0 #000;
+            }
+        }
+     
+        button[role='radio']{
+            .alert-radio-label.sc-ion-alert-md {
+                color: rgb(5, 5, 5);
+              
+            }
+        }
+
+        .alert-radio-inner{
+            background-color: #163616;
+        }
+
         div.alert-radio-label{
-            color: white;
+            color: rgb(0, 0, 0);
         }
 
         strong{
@@ -730,17 +799,20 @@
         .alert-button.alert-button-role-cancel  {
             color: rgb(255, 255, 255);
             background-color: rgb(105, 37, 37);
+            border: solid 1px black;
         }
 
         .alert-button{
             color: rgb(255, 255, 255);
             background-color: rgb(39, 144, 62);
+            border: solid 1px black;
         }
+
+       
 
     }
 
 
-    
 
     ion-action-sheet {
         --backdrop-opacity: 0.5;

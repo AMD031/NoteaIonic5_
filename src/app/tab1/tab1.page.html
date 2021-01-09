@@ -41,13 +41,24 @@
 
   </ion-toolbar>
 
-  <ion-toolbar color="primary">
+  <ion-toolbar color="primary" >
+
     <ion-searchbar 
-    slot="start" 
-    [placeholder]="this.buscarTexto"
-    (ionChange)="onSearchChange($event)" 
-    [debounce]="1200"
-    [inputmode]="tipoTeclado">
+      *ngIf="this.seleccionBuscar === 1 || this.seleccionBuscar === 2"
+      slot="start" 
+      [placeholder]="this.translate.instant('buscar.mensajeBarBuscar')"
+      (ionChange)="onSearchChange($event)" 
+      [debounce]="1200"
+      [inputmode]="tipoTeclado">
+    </ion-searchbar>
+
+    <ion-searchbar 
+      *ngIf="this.seleccionBuscar === 3 || this.seleccionBuscar === 4"
+      slot="start" 
+      [placeholder]="this.translate.instant('buscar.formato')"
+      (ionChange)="onSearchChange($event)" 
+      [debounce]="1200"
+      [inputmode]="tipoTeclado">
     </ion-searchbar>
 
     <ion-button slot="end" (click)="menuAlertBucar()" shape="clear">

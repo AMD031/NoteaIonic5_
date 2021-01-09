@@ -29,8 +29,7 @@ export class Tab1Page {
   public cantidadNueva = 2;
   public buscarPor: string = 'titulo';
   public fin: boolean = false;
-  private seleccionBuscar: number = 1;
-  public buscarTexto = this.translate.instant('buscar.mensajeBarBuscar');
+  public seleccionBuscar: number = 1;
   public tipoTeclado = 'text';
   cabeceraPaginacion: any = {
     header: `${this.translate.instant('OpPaginado.cabecera') + ':'}`
@@ -298,25 +297,24 @@ export class Tab1Page {
           this.tipoTeclado = 'text';
           this.seleccionBuscar = 1;
           this.barraBusqueda.value = '';
-          this.buscarTexto = this.translate.instant('buscar.mensajeBarBuscar');
+       
           break;
         case 'texto':
           this.tipoTeclado = 'text';
           this.seleccionBuscar = 2;
           this.barraBusqueda.value = '';
-          this.buscarTexto = this.translate.instant('buscar.mensajeBarBuscar');
+
           break;
         case 'fechaCreacion':
           this.tipoTeclado = 'numeric';
           this.seleccionBuscar = 3;
           this.barraBusqueda.value = '';
-          this.buscarTexto = this.translate.instant('buscar.formato');
+ 
           break;
         case 'fechaLimite':
           this.tipoTeclado = 'numeric';
           this.seleccionBuscar = 4;
           this.barraBusqueda.value = '';
-          this.buscarTexto = this.translate.instant('buscar.formato');
           break;
       }
 
