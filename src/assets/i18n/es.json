@@ -18,7 +18,7 @@
     "buscar":{
         "error": "la busqueda ha fallado.",
         "mensajeBarBuscar": "Escribe algo para buscar.",
-        "formato": "Escribe una fecha con formato DDMMAAAA"
+        "formato": "Formato DDMMAAAA"
     },
     "infinito":{
         "mensajeCarga" : "Cargar mas elementos."

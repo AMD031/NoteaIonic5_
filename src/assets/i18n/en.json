@@ -17,7 +17,7 @@
      "buscar":{
         "error": "the search has failed..",
         "mensajeBarBuscar": "Write something to search.",
-        "formato": "Write a date in the format DDMMYYYY"
+        "formato": "Format DDMMYYYY"
         
 
     },

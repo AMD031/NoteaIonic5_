@@ -23,8 +23,11 @@
   <form [formGroup]="tasks" (ngSubmit)="this.sendForm()">
 
     <ion-item>
-      <ion-input type="text" formControlName="title"
-        [placeholder]="' (*) '+this.translate.instant('formularioNota.titulo')">
+      <ion-input 
+        type="text" formControlName="title"
+        [placeholder]="' (*) '+this.translate.instant('formularioNota.titulo')"
+        autocapitalize="true"
+        >
       </ion-input>
     </ion-item>
 
