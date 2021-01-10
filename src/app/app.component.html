@@ -1,5 +1,10 @@
 <ion-app>
-  <app-cabecera></app-cabecera>
+  <app-cabecera *ngIf="!this.mensaje.ocultar"></app-cabecera>
   <app-menu></app-menu>
+  <ion-fab vertical="bottom" horizontal="start" slot="fixed">
+    <ion-fab-button size="small" (click)="this.mensaje.ocutarInerfaz()">
+      <ion-icon [src]="this.mensaje.urlNueva()"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
   <ion-router-outlet id="main"></ion-router-outlet>
 </ion-app>

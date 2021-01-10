@@ -47,11 +47,12 @@ export class Tab2Page {
     private foto: FotoService,
     private fotoGS: GestionfotoService,
   ) {
+
     platform.ready().then(() => {
-      if (this.platform.is('android')) {
-        this.geoAltaPrecision();
-      }
-    }).catch(
+        if (this.platform.is('android')) {
+          this.geoAltaPrecision();
+        }
+      }).catch(
       async (err) => {
         await this.mensaje.presentToast(err, 'danger');
       });

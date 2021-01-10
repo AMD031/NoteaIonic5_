@@ -7,6 +7,7 @@ import { ElementoAlert } from '../model/elementoAlert';
 })
 export class MensajesService {
   myloading: any;
+  public ocultar: boolean = false;
   constructor(
     public alertController: AlertController,
     public toastController: ToastController,
@@ -95,7 +96,7 @@ export class MensajesService {
     textoCancelar: string = 'cancelar',
     textoAceptar: string = 'aceptar',
     mensaje: string = 'Elige'
-    ): Promise<string> {
+  ): Promise<string> {
     return new Promise(async (resolve, reject) => {
       await this.alertController.create({
         cssClass: 'my-custom-class',
@@ -125,6 +126,16 @@ export class MensajesService {
         });
     });
   }
+  ocutarInerfaz() {
+    this.ocultar = !this.ocultar;
+  }
 
+  public urlNueva() {
+    if (this.ocultar) {
+      return 'assets/img/mostrar.svg';
+    } else {
+      return 'assets/img/ocultar.svg';
+    }
+  }
 
 }

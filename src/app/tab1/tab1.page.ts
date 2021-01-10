@@ -1,4 +1,5 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, Sanitizer, ViewChild } from '@angular/core';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { /*IonInfiniteScroll,*/ IonSearchbar, ModalController } from '@ionic/angular';
 import { TranslateService } from '@ngx-translate/core';
 import * as moment from 'moment';
@@ -31,6 +32,8 @@ export class Tab1Page {
   public fin: boolean = false;
   public seleccionBuscar: number = 1;
   public tipoTeclado = 'text';
+
+
   cabeceraPaginacion: any = {
     header: `${this.translate.instant('OpPaginado.cabecera') + ':'}`
   };
@@ -44,14 +47,13 @@ export class Tab1Page {
     // private authS: AuthService,
     public notasS: NotasService,
     private modalController: ModalController,
-    private mensaje: MensajesService,
+    public mensaje: MensajesService,
     private vibra: VibraService,
     public translate: TranslateService,
     private conf: CargaconfService,
-    private fotoGS: GestionfotoService
-  ) {
-
-  }
+    private fotoGS: GestionfotoService,
+    private sanitizer: DomSanitizer
+  ) { }
 
   @ViewChild(IonSearchbar) barraBusqueda: IonSearchbar;
   // @ViewChild(IonInfiniteScroll) infinito: IonInfiniteScroll;
@@ -297,7 +299,7 @@ export class Tab1Page {
           this.tipoTeclado = 'text';
           this.seleccionBuscar = 1;
           this.barraBusqueda.value = '';
-       
+
           break;
         case 'texto':
           this.tipoTeclado = 'text';
@@ -309,7 +311,7 @@ export class Tab1Page {
           this.tipoTeclado = 'numeric';
           this.seleccionBuscar = 3;
           this.barraBusqueda.value = '';
- 
+
           break;
         case 'fechaLimite':
           this.tipoTeclado = 'numeric';
@@ -325,16 +327,13 @@ export class Tab1Page {
   }
 
 
-  acortaTexto(texto: string ){
-    let textoAcortado =  texto.slice(0, 10);
-    if ( texto .length > 10){
-     textoAcortado =  textoAcortado + '...';
+  acortaTexto(texto: string) {
+    let textoAcortado = texto.slice(0, 10);
+    if (texto.length > 10) {
+      textoAcortado = textoAcortado + '...';
     }
     return textoAcortado;
   }
-
-
-
 
 
 }

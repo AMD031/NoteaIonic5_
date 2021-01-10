@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
 
-  <ion-toolbar color="primary">
+  <ion-toolbar color="primary" *ngIf="!this.mensaje.ocultar">
     <!-- <ion-title></ion-title> -->
 
     <ion-item slot="start" lines="none" color="primary">
@@ -41,7 +41,7 @@
 
   </ion-toolbar>
 
-  <ion-toolbar color="primary" >
+  <ion-toolbar color="primary" *ngIf="!this.mensaje.ocultar">
 
     <ion-searchbar 
       *ngIf="this.seleccionBuscar === 1 || this.seleccionBuscar === 2"
@@ -181,4 +181,5 @@
 
 
 
+  
 </ion-content>

@@ -27,12 +27,6 @@ export class GestionfotoService {
     );
   }
 
-  // subirFotoHttp(info: any): Promise<HTTPResponse>{
-  //   const endPoint = environment.heroku + '/api/upload';
-  //   return this.Http.post(endPoint, {data: info}, this.header);
-  // }
-
-
   // get
   obtenerImagen(idImagen) {
     const endPoint = environment.heroku + `/api/get/${idImagen}`;
