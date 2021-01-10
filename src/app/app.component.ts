@@ -25,6 +25,7 @@ export class AppComponent {
     public mensaje: MensajesService
   ) {
     this.initializeApp();
+
   }
 
   initializeApp() {

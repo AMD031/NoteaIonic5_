@@ -179,7 +179,11 @@
     </ion-infinite-scroll-content>
   </ion-infinite-scroll>
 
-
+  <ion-fab vertical="bottom" horizontal="start" slot="fixed">
+    <ion-fab-button size="small" (click)="this.mensaje.ocutarInerfaz()">
+      <ion-icon [src]="this.mensaje.urlNueva()"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 
   
 </ion-content>
