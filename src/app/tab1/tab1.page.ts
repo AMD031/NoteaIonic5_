@@ -241,6 +241,7 @@ export class Tab1Page {
   }
 
   public async cambiarPaginado($event) {
+
     if ($event) {
       this.paginado = parseInt($event.target.value);
       await this.cargaDatos(null, true, true);
@@ -257,7 +258,7 @@ export class Tab1Page {
   }
 
   public async menuAlertBucar() {
-    const resp: string = await this.mensaje.presentAlertRadio('Buscar por:', [
+    const resp: string = await this.mensaje.presentAlertRadio( this.translate.instant('OpBuscarPor.cabecera'), [
       {
         name: 'titulo',
         label: this.translate.instant('OpBuscarPor.titulo'),
@@ -333,6 +334,17 @@ export class Tab1Page {
       textoAcortado = textoAcortado + '...';
     }
     return textoAcortado;
+  }
+
+  nuevacabeceraPaginacion(){
+    this.cabeceraPaginacion = {
+      header: `${this.translate.instant('OpPaginado.cabecera') + ':'}`
+    };
+  }
+  nuevacabeceraOrden(){
+    this.cabeceraOrdenar = {
+      header: `${this.translate.instant('OpOrdenarPor.cabecera') + ':'}`
+    };
   }
 
 

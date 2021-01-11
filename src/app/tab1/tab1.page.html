@@ -14,7 +14,7 @@
       <ion-label>
         <ion-icon slot="start" src="assets/img/ordenar.svg"></ion-icon>
       </ion-label>
-      <ion-select (ionChange)="this.cambiarOrden($event)" [okText]="this.translate.instant('AcCan.Aceptar')"
+      <ion-select  (click)="nuevacabeceraOrden()" (ionChange)="this.cambiarOrden($event)" [okText]="this.translate.instant('AcCan.Aceptar')"
         [cancelText]="this.translate.instant('AcCan.Cancelar')" [interfaceOptions]="cabeceraOrdenar"
         interface="action-sheet" selectedText=" ">
         <ion-select-option value="titulo">{{"OpOrdenarPor.titulo" | translate}}</ion-select-option>
@@ -29,7 +29,7 @@
       <ion-label>
         <ion-icon slot="start" src="assets/img/cantidad.svg" size="large"></ion-icon>
       </ion-label>
-      <ion-select (ionChange)="this.cambiarPaginado($event)" [okText]="this.translate.instant('AcCan.Aceptar')"
+      <ion-select (click)="nuevacabeceraPaginacion()" (ionChange)="this.cambiarPaginado($event)" [okText]="this.translate.instant('AcCan.Aceptar')"
         [cancelText]="this.translate.instant('AcCan.Cancelar')" [interfaceOptions]="cabeceraPaginacion"
         interface="action-sheet" selectedText=" ">
         <ion-select-option value="7">7</ion-select-option>

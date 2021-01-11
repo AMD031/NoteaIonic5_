@@ -129,7 +129,7 @@
      "OpBuscarPor":{
       "cabecera": "Search for",
       "btn": "Search for",
-      "titulo": "Título",
+      "titulo": "Title",
       "descripcion":"description", 
       "fechaCreacion": "Later creation date",
       "fechaLimite": "Later Deadline"
