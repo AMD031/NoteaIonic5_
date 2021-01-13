@@ -98,6 +98,14 @@ export class NotasService {
           // .startAt(criterio)
           // .endAt(criterio + '\uf8ff')
           .get();
+      }else if(ordenarPor === 'prioridad'){
+        return this.myCollection.ref
+        .orderBy(ordenarPor)
+        .startAfter(this.ultimoDocumento)
+        .limit(cantidad)
+        // .startAt(criterio)
+        // .endAt(criterio + '\uf8ff')
+        .get();
       } else {
         return this.myCollection.ref
           .orderBy(ordenarPor)

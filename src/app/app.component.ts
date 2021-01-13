@@ -25,7 +25,6 @@ export class AppComponent {
     public mensaje: MensajesService
   ) {
     this.initializeApp();
-
   }
 
   initializeApp() {
@@ -35,7 +34,7 @@ export class AppComponent {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
       this.authS.init();
-
+ 
     });
   }
 }

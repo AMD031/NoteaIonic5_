@@ -49,10 +49,10 @@ export class Tab2Page {
   ) {
 
     platform.ready().then(() => {
-        if (this.platform.is('android')) {
-          this.geoAltaPrecision();
-        }
-      }).catch(
+      if (this.platform.is('android')) {
+        this.geoAltaPrecision();
+      }
+    }).catch(
       async (err) => {
         await this.mensaje.presentToast(err, 'danger');
       });
@@ -63,7 +63,8 @@ export class Tab2Page {
       latitud: [''],
       longitud: [''],
       fechaLimite: ['', Validators.required],
-      hora: ['', Validators.required]
+      hora: ['', Validators.required],
+      prioridad: ['5']
     });
   }
 
@@ -73,7 +74,7 @@ export class Tab2Page {
       this.tasks.get('description').setValue(this.nota.texto);
       this.tasks.get('latitud').setValue(this.nota.latitud);
       this.tasks.get('longitud').setValue(this.nota.longitud);
-      this.tasks.get('longitud').setValue(this.nota.longitud);
+      this.tasks.get('prioridad').setValue(this.nota.prioridad);
       this.tasks.get('fechaLimite').setValue(moment.unix(this.nota.fechaLimite.seconds).format('YYYY-MM-DD'));
       this.tasks.get('hora').setValue(moment.unix(this.nota.hora.seconds).format());
       this.datosImg = this.nota.datosImagen;
@@ -87,7 +88,24 @@ export class Tab2Page {
 
   ionViewDidLeave() {
 
-   }
+  }
+
+  ionViewWillLeave() {
+
+    this.tasks.setValue({
+      title: '',
+      description: '',
+      latitud: '',
+      longitud: '',
+      fechaLimite: '',
+      hora: '',
+      prioridad: '5',
+    });
+
+    this.datosImg = null;
+    this.imagen =  null;
+    this.nuevaFoto = false;
+  }
 
   private hoy() {
     this.fechaMinima = moment(new Date()).format('YYYY-MM-DD');
@@ -153,8 +171,9 @@ export class Tab2Page {
     await this.mensaje.presentLoading(this.translate.instant('formularioNota.guardar'));
     if (this.imagen) {
       if (this.nota?.datosImagen &&
-         this.nota?.datosImagen !== '' && this.nuevaFoto){
-         await this.borrarImagenExistente();
+          this.nota?.datosImagen !== '' &&
+          this.nuevaFoto) {
+        await this.borrarImagenExistente();
       }
       if (this.imagen) {
         try {
@@ -175,6 +194,7 @@ export class Tab2Page {
       longitud: this.tasks.get('longitud').value,
       fechaLimite: fechaLimite ? moment(fechaLimite, 'YYYY-MM-DD').toDate() : '',
       hora: hora ? moment(hora).toDate() : '',
+      prioridad:  this.tasks.get('prioridad').value,
       datosImagen: this.datosImg ? this.datosImg : ''
     };
     // alert(JSON.stringify( this.datosImg));
@@ -210,7 +230,8 @@ export class Tab2Page {
             latitud: '',
             longitud: '',
             fechaLimite: '',
-            hora: ''
+            hora: '',
+            prioridad: '',
           });
           this.datosImg = null;
           this.imagen = null;
@@ -251,7 +272,7 @@ export class Tab2Page {
 
   borrarImagen(id: any) {
     return new Promise((resolve, reject) => {
-      try {   
+      try {
         this.fotoGS.borrarImagen(id).subscribe(
           (res) => {
             resolve(res);

@@ -14,12 +14,13 @@
       <ion-label>
         <ion-icon slot="start" src="assets/img/ordenar.svg"></ion-icon>
       </ion-label>
-      <ion-select  (click)="nuevacabeceraOrden()" (ionChange)="this.cambiarOrden($event)" [okText]="this.translate.instant('AcCan.Aceptar')"
-        [cancelText]="this.translate.instant('AcCan.Cancelar')" [interfaceOptions]="cabeceraOrdenar"
-        interface="action-sheet" selectedText=" ">
+      <ion-select (click)="nuevacabeceraOrden()" (ionChange)="this.cambiarOrden($event)"
+        [okText]="this.translate.instant('AcCan.Aceptar')" [cancelText]="this.translate.instant('AcCan.Cancelar')"
+        [interfaceOptions]="cabeceraOrdenar" interface="action-sheet" selectedText=" ">
         <ion-select-option value="titulo">{{"OpOrdenarPor.titulo" | translate}}</ion-select-option>
         <ion-select-option value="fechaCreacion">{{"OpOrdenarPor.fechaCreacion" | translate}}</ion-select-option>
         <ion-select-option value="fechaLimite">{{"OpOrdenarPor.fechaLimite" | translate}}</ion-select-option>
+        <ion-select-option value="prioridad">{{"formularioNota.prioridad" | translate}}</ion-select-option>
       </ion-select>
     </ion-item>
 
@@ -29,9 +30,9 @@
       <ion-label>
         <ion-icon slot="start" src="assets/img/cantidad.svg" size="large"></ion-icon>
       </ion-label>
-      <ion-select (click)="nuevacabeceraPaginacion()" (ionChange)="this.cambiarPaginado($event)" [okText]="this.translate.instant('AcCan.Aceptar')"
-        [cancelText]="this.translate.instant('AcCan.Cancelar')" [interfaceOptions]="cabeceraPaginacion"
-        interface="action-sheet" selectedText=" ">
+      <ion-select (click)="nuevacabeceraPaginacion()" (ionChange)="this.cambiarPaginado($event)"
+        [okText]="this.translate.instant('AcCan.Aceptar')" [cancelText]="this.translate.instant('AcCan.Cancelar')"
+        [interfaceOptions]="cabeceraPaginacion" interface="action-sheet" selectedText=" ">
         <ion-select-option value="7">7</ion-select-option>
         <ion-select-option value="10">10</ion-select-option>
         <ion-select-option value="25">25</ion-select-option>
@@ -43,21 +44,13 @@
 
   <ion-toolbar color="primary" *ngIf="!this.mensaje.ocultar">
 
-    <ion-searchbar 
-      *ngIf="this.seleccionBuscar === 1 || this.seleccionBuscar === 2"
-      slot="start" 
-      [placeholder]="this.translate.instant('buscar.mensajeBarBuscar')"
-      (ionChange)="onSearchChange($event)" 
-      [debounce]="1200"
-      [inputmode]="tipoTeclado">
+    <ion-searchbar *ngIf="this.seleccionBuscar === 1 || this.seleccionBuscar === 2" slot="start"
+      [placeholder]="this.translate.instant('buscar.mensajeBarBuscar')" (ionChange)="onSearchChange($event)"
+      [debounce]="1200" [inputmode]="tipoTeclado">
     </ion-searchbar>
 
-    <ion-searchbar 
-      *ngIf="this.seleccionBuscar === 3 || this.seleccionBuscar === 4"
-      slot="start" 
-      [placeholder]="this.translate.instant('buscar.formato')"
-      (ionChange)="onSearchChange($event)" 
-      [debounce]="1200"
+    <ion-searchbar *ngIf="this.seleccionBuscar === 3 || this.seleccionBuscar === 4" slot="start"
+      [placeholder]="this.translate.instant('buscar.formato')" (ionChange)="onSearchChange($event)" [debounce]="1200"
       [inputmode]="tipoTeclado">
     </ion-searchbar>
 
@@ -88,7 +81,7 @@
         <ion-grid fixed>
           <ion-row>
             <ion-col size="2">
-              <ion-thumbnail >
+              <ion-thumbnail>
                 <ion-img src="assets/img/extraviado.svg"></ion-img>
               </ion-thumbnail>
             </ion-col>
@@ -108,54 +101,46 @@
           <ion-icon name="trash" style="font-size: x-large;"></ion-icon>
         </ion-item-option>
       </ion-item-options>
-      <!--  (click)="notaDetallada(nota: Nota)" -->
-      <!-- <ion-label>
-          <h2><b><u>{{ "listado.tituloNota" | translate }}:</u></b> {{nota.titulo}}</h2>
-          <br><b><u>{{ "listado.descripcion" | translate }}:</u></b> {{nota.texto}}
-          <span *ngIf="nota.fechaCreacion"> <br><b><u>{{ "listado.fechaCreacion" | translate }}:</u></b>
-             {{ this.modificaFecha(nota.fechaCreacion, 'compuesta') }}</span>
-          <span *ngIf="nota.fechaLimite"> <br><b><u>{{ "listado.fechaLimite" | translate }}:</u></b>
-             {{ this.modificaFecha(nota.fechaLimite, "simple")}}</span>
-          <span *ngIf="nota.hora"> <br><b><u>{{ "listado.hora" | translate }}:</u></b> 
-            {{ this.modificaFecha(nota.hora, "hora")}}</span>
-          <span *ngIf="nota.latitud"> <br><b><u>{{ "listado.latitud" | translate }}:</u></b> {{nota.latitud}}</span>
-          <span *ngIf="nota.longitud"> <br><b><u>{{ "listado.longitud" | translate }}:</u></b> {{nota.longitud}}</span>
-        </ion-label> -->
 
-      <ion-item>
-
-
+      <ion-item style="width: 100%;">
         <ion-card style="width: 100%;">
           <ion-item>
+
             <ion-icon src="assets/img/nota.svg" slot="start"></ion-icon>
+
             <ion-label>
-              <h2><b><u>{{ "listado.tituloNota" | translate }}:</u></b> {{nota.titulo}}</h2>
+              <h2> {{nota.titulo}}</h2>
             </ion-label>
 
-            <ion-button class="botonDetalles" fill="outline" slot="end" (click)="notaDetallada(nota)">{{ "listado.detalles" | translate }}
+            <ion-button class="botonDetalles" fill="clear" slot="end" (click)="notaDetallada(nota)">
+              <!-- {{"listado.detalles" | translate }} -->
+              <ion-icon slot="start" src="assets/img/mas.svg"></ion-icon>
+              {{ "listado.mas" | translate }}
             </ion-button>
+
+            <ion-icon [src]="urlPrioridad(nota?.prioridad)" slot="end"></ion-icon>
           </ion-item>
 
-          <!-- <ion-card-content style="margin-bottom: 0;">
-          
-          </ion-card-content> -->
-
           <ion-card-content>
-
-            <span *ngIf="nota.texto"> <br><b><u>{{ "listado.descripcion" | translate }}:</u></b>
-              {{ this.acortaTexto(nota.texto) }}</span>
-            <span *ngIf="nota.fechaCreacion"> <br><b><u>{{ "listado.fechaCreacion" | translate }}:</u></b>
-              {{ this.modificaFecha(nota.fechaCreacion, 'compuesta') }}</span>   
-            <span *ngIf="nota.fechaLimite"> <br><b><u>{{ "listado.fechaLimite" | translate }}:</u></b>
-              {{ this.modificaFecha(nota.fechaLimite, "simple")}}</span>
-            <span *ngIf="nota.hora"> <br><b><u>{{ "listado.hora" | translate }}:</u></b>
-              {{ this.modificaFecha(nota.hora, "hora")}}</span>
+            <ion-grid>
+              <ion-row>
+                <span *ngIf="nota.texto"><b><u>{{ "listado.descripcion" | translate }}:</u></b>
+                  {{ this.acortaTexto(nota.texto) }}</span>
+              </ion-row>
+              <ion-row>
+                <span *ngIf="nota.fechaCreacion"> <b><u>{{ "listado.fechaCreacion" | translate }}:</u></b>
+                  {{ this.modificaFecha(nota.fechaCreacion, 'compuesta') }}</span>
+              </ion-row>
+              <ion-row>
+                <span *ngIf="nota.fechaLimite"> <b><u>{{ "listado.fechaLimite" | translate }}:</u></b>
+                  {{ this.modificaFecha(nota.fechaLimite, "simple")}}</span>
+              </ion-row>
+              <ion-row>
+              </ion-row>
+              <span *ngIf="nota.hora"> <b><u>{{ "listado.hora" | translate }}:</u></b>
+                {{ this.modificaFecha(nota.hora, "hora")}}</span>
+            </ion-grid>
           </ion-card-content>
-          <!-- <ion-card-content>
-            <span *ngIf="nota.latitud"> <br><b><u>{{ "listado.latitud" | translate }}:</u></b> {{nota.latitud}}</span>
-            <span *ngIf="nota.longitud"> <br><b><u>{{ "listado.longitud" | translate }}:</u></b>
-              {{nota.longitud}}</span>
-          </ion-card-content> -->
         </ion-card>
       </ion-item>
 
@@ -170,7 +155,6 @@
       <ion-label></ion-label>
       <ion-label></ion-label>
     </ion-item>
-
   </ion-list>
 
   <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
@@ -185,5 +169,5 @@
     </ion-fab-button>
   </ion-fab>
 
-  
+
 </ion-content>

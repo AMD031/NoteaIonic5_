@@ -45,7 +45,7 @@ export class MenuPage implements OnInit {
     // }, 700);
   }
   async ngOnInit() {
-    console.log('entra ngOnInit');
+    // console.log('entra ngOnInit');
   }
 
   cargarOpmenu() {
@@ -64,7 +64,7 @@ export class MenuPage implements OnInit {
     }
   }
 
-  menuAbierto(){
+  menuAbierto() {
     this.cargarOpmenu();
   }
 
@@ -121,6 +121,8 @@ export class MenuPage implements OnInit {
       this.mensaje.presentToast(this.translate.instant('mensajePreferencia.errGuardar'), 'danger');
     }
   }
+
+
 
 
 

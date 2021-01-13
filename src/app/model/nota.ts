@@ -10,4 +10,5 @@ export interface Nota {
     longitud?: number;
     imagen?: any;
     datosImagen?: any;
+    prioridad?: number;
 }

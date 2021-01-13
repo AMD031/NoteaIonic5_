@@ -30,10 +30,6 @@
 :root{
 
      // background: #140405  !important;
- 
-
-
-
     .dark-theme{
 
         --ion-color-primary: #140405 !important;
@@ -107,7 +103,7 @@
     
     }
 
- 
+
 
 
       // datepicker picker-toolbar-cancel
@@ -198,7 +194,6 @@
 
 
        
-
       
 
 
@@ -222,7 +217,7 @@
 
         ion-toolbar {
             --background: #030813 !important;
-            --border-color: #3880ff;
+            // --border-color: #3880ff;
             // --border-style: solid;
             // --border-width: 8px;
             --color: #ffffff !important;
@@ -234,6 +229,24 @@
             --padding-top: 4px;
         }
         
+        
+    ion-alert.alertBorrar{
+
+        div.alert-head{
+            border-top: solid gray 1px ;
+            border-bottom: solid gray 1px ;
+      
+        }
+
+        div.alert-message.sc-ion-alert-md{
+            padding-top: 1em !important;
+        }
+        .alert-button-group.sc-ion-alert-md{
+            border-top: solid gray 1px ;
+            border-bottom: solid gray 1px ;
+        }
+     
+    }
  
 
         ion-alert {
@@ -258,7 +271,9 @@
             }
 
             .alert-button-group.sc-ion-alert-md{
+         
                 background-color: #0f0f0f;
+                
             }
 
             button[role='radio']:focus{
@@ -292,8 +307,9 @@
             }
     
             div.alert-head{
-                border-top: white solid 1px;
+                border-top: grey solid 1px;
                 background-color: #0f0f0f;
+             
                 // padding-bottom: 1em;
                 // margin-bottom: 1em;
             }
@@ -310,12 +326,15 @@
             .alert-button.alert-button-role-cancel  {
                 color: rgb(255, 255, 255);
                 background-color: rgb(105, 37, 37);
+                border: grey 1px solid;
             }
        
             
             .alert-button{
                 color: rgb(255, 255, 255);
                 background-color: rgb(7, 66, 20);
+                border: grey 1px solid;
+         
             }
 
          
@@ -327,7 +346,7 @@
             --backdrop-opacity: 0.5;
             --background: #000000;
             --button-background: #333131;
-            --button-background-activated: #3880ff;
+            --button-background-activated: #a02b1c;
             // --button-background-activated-opacity: 1;
             // --button-background-focused: #3880ff;
             // --button-background-focused-opacity: 1;
@@ -348,11 +367,26 @@
             // --min-width: 100%;
             // --width: 100%;
 
-            button:hover.action-sheet-cancel {
-                color: rgb(255, 255, 255);
-                --button-background-hover:  rgb(105, 37, 37);
+
+            div.action-sheet-title.sc-ion-action-sheet-md{
+                border-top: grey 1px solid;
+                border-bottom: grey 1px solid;
             }
 
+            button:hover.action-sheet-button.ion-activatable.ion-focusable.action-sheet-cancel {
+                color: rgb(255, 255, 255) !important;
+                border-top: grey 1px solid;
+                --button-background-hover: rgb(12, 12, 12)  !important;
+                border-bottom: grey 1px solid;
+            }
+
+            button.action-sheet-button.ion-activatable.ion-focusable.action-sheet-cancel{
+                // --button-background-hover:  rgb(34, 1, 1);
+                border-top: grey 1px solid;
+                border-bottom: grey 1px solid;
+                background-color: rgb(32, 0, 0);
+                color: rgb(255, 255, 255) !important;
+            }
          
         }
        
@@ -507,20 +541,20 @@
         }
 
     
-    
-   
+  
      ion-tab-bar {
          --background: rgb(54, 54, 54);
         //  --border-radius: 8px;
-         --color: #ffffff;
+         --color:  #140405;
+         --ion-color-primary: #ffffff !important;
+
+    
          ion-title {
              --color: #fff;
          }
      }
    }
-
-
-
+   
     
 }
 
@@ -535,13 +569,15 @@
         --ion-color-primary-shade: #3a7be0 !important;
         --ion-color-primary-tint: #5598ff !important;
 
-
         --ion-color-secondary: #83b6cf !important;
         --ion-color-secondary-rgb: 61, 194, 255 !important;
         --ion-color-secondary-contrast: #ffffff !important;
         --ion-color-secondary-contrast-rgb: 255, 255, 255 !important;
         --ion-color-secondary-shade: #36abe0 !important;
         --ion-color-secondary-tint: #50c8ff !important;
+
+     
+       
 
         ion-fab-button {
             // --background: #3880ff;
@@ -574,6 +610,9 @@
             background-color: #1d4b24 !important;
         }
 
+
+
+     
 
         .color{
             background-color:#2f6e38 !important;
@@ -659,7 +698,10 @@
             // }
 
             .botonGuardar{
+                background-color:  rgb(39, 144, 62);
                 color: white;
+                // --border-color: white 0.5px  solid;
+                
             }
 
         }
@@ -735,6 +777,8 @@
             // --transition: background-color 15ms linear;
         }
 
+    
+
         ion-searchbar {
             --background: #d1ecd8;
             // --border-radius: 2px;
@@ -747,7 +791,8 @@
             --placeholder-font-style: initial;
             --placeholder-font-weight: initial;
             // --placeholder-opacity: 0.5;
-        }
+            }
+      
           
         ion-tab-button {
             // --background: #3880ff;
@@ -782,6 +827,24 @@
         // --inner-border-width: 2px;
     }
 
+    ion-alert.alertBorrar{
+
+        div.alert-head{
+            border-top: solid black 1px ;
+            border-bottom: solid black 1px ;
+      
+        }
+
+        div.alert-message.sc-ion-alert-md{
+            padding-top: 1em !important;
+        }
+        .alert-button-group.sc-ion-alert-md{
+           border-top: solid black 1px ;
+           border-bottom: solid black 1px ;
+        }
+     
+    }
+
     ion-alert {
         --backdrop-opacity: 0.5;
         --background: #8cc499;
@@ -802,8 +865,13 @@
         div.alert-head{
             background-color: #0e441b;
             // margin-bottom: 1em;
+            border-top: solid black 1px ;
+            border-bottom: solid black 1px ;
+      
         }
 
+
+        
         // button[role='radio']:focus{
         //     .alert-radio-label.sc-ion-alert-md {
         //         color: rgb(253, 253, 253);
@@ -812,6 +880,8 @@
         
         .alert-button-group.sc-ion-alert-md{
             background-color: rgb(34, 97, 53);
+            border-top: solid black 1px ;
+            border-bottom: solid black 1px ;
         }
 
         button[role='radio']:focus{
@@ -870,20 +940,20 @@
 
     ion-action-sheet {
         --backdrop-opacity: 0.5;
-        --background:#0e441b;
-        --button-background: #2b9546;;
-        --button-background-activated: #3880ff;
+        --background:#2d5f3a;
+        --button-background: #ffffff;
+        --button-background-activated: rgb(160, 0, 0);
         // --button-background-activated-opacity: 1;
         // --button-background-focused: #3880ff;
         // --button-background-focused-opacity: 1;
-        --button-background-hover: #197c47;
+        --button-background-hover: #8bb49e;
         --button-background-hover-opacity: 1;
         // --button-background-selected: #3880ff;
         // --button-background-selected-opacity: 1;
-        --button-color: #ffffff;
+        // --button-color: #000000;
         // --button-color-activated: #3880ff;
-        // --button-color-focused: #3880ff;
-        --button-color-hover: #000000;
+        // --button-color-focused: #ffffff;
+        // --button-color-hover: #000000;
         // --button-color-selected: #3880ff;
         --color: #ffffff;
         // --height: 100%;
@@ -893,11 +963,26 @@
         // --min-width: 100%;
         // --width: 100%;
 
-        button:hover.action-sheet-cancel {
-            color: rgb(255, 255, 255);
-            --button-background-hover:  rgb(105, 37, 37);
+        button:hover.action-sheet-button.ion-activatable.ion-focusable.action-sheet-cancel {
+            color: rgb(255, 255, 255) !important;
+            --button-background-hover: rgb(218, 2, 2) !important;
+        }
+        
+        button.action-sheet-button.ion-activatable.ion-focusable.action-sheet-cancel{
+            border-top: black 1px solid;
+            border-bottom: black 1px solid;
+            background-color: rgb(105, 37, 37)  !important;
+            color: rgb(255, 255, 255) !important;
         }
 
+        button:hover{
+            color: white;
+        }
+        div.action-sheet-title.sc-ion-action-sheet-md{
+            border-top: black 1px solid;
+            border-bottom: black 1px solid;
+            color: white;
+        }
     }
 
     // datepicker picker-toolbar-cancel
@@ -944,6 +1029,10 @@
         color: white !important;
     }
 
+
+
+   
+ 
     }
 }
 

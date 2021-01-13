@@ -37,7 +37,8 @@
         "hora":"Time limit",
         "detalles": "Details",
         "noElementos": "No items",
-        "eliminar":"Deleting note"
+        "eliminar":"Deleting note",
+        "mas": "More"
      },
      "formularioNota":{
         "cabecera" :"Add task",
@@ -53,7 +54,13 @@
         "errorGuardarNota": "Error saving note.",
         "hora": "Time limit",
         "btnFoto" :"Take photo",
-        "btnMapa" : "Map"
+        "btnMapa" : "Map",
+         "prioridad":"Priority",
+         "sinPrioridad":"No priority",
+         "minima":"Minimum",
+         "normal":"Normal",
+         "importante":"Important",
+         "urgente":"Urgent"
      },
      "editarNota":{
         "cabecera" :"Edit task.",
@@ -130,7 +137,7 @@
       "cabecera": "Search for",
       "btn": "Search for",
       "titulo": "Title",
-      "descripcion":"description", 
+      "descripcion":"Description", 
       "fechaCreacion": "Later creation date",
       "fechaLimite": "Later Deadline"
      }

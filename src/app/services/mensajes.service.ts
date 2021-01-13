@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AlertController, LoadingController, ToastController } from '@ionic/angular';
+import { AlertController, LoadingController, ModalController, ToastController } from '@ionic/angular';
 import { ElementoAlert } from '../model/elementoAlert';
 
 @Injectable({
@@ -11,7 +11,8 @@ export class MensajesService {
   constructor(
     public alertController: AlertController,
     public toastController: ToastController,
-    public loadingController: LoadingController
+    public loadingController: LoadingController,
+    public modalController: ModalController
   ) { }
 
   /**
@@ -26,7 +27,7 @@ export class MensajesService {
     : Promise<boolean> {
     return new Promise((resolve, reject) => {
       this.alertController.create({
-        cssClass: 'my-custom-class',
+        cssClass: 'alertBorrar',
         header: cabecera,
         message: `<strong>${mensaje}</strong>`,
         buttons: [
@@ -126,6 +127,8 @@ export class MensajesService {
         });
     });
   }
+
+
   ocutarInerfaz() {
     this.ocultar = !this.ocultar;
   }
@@ -137,5 +140,8 @@ export class MensajesService {
       return 'assets/img/ocultar.svg';
     }
   }
+
+
+
 
 }

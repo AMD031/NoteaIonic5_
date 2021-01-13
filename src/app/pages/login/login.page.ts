@@ -22,6 +22,7 @@ export class LoginPage implements OnInit {
     private translate: TranslateService,
     private conf: CargaconfService,
   ) {
+  
   }
 
   ngOnInit() {
@@ -29,6 +30,7 @@ export class LoginPage implements OnInit {
       if (this.authS.isLogged()) {
         this.router.navigate(['/']);
       }
+      this.router.navigate(['/'], { replaceUrl: true });
     }, 800);
   }
 
@@ -53,16 +55,14 @@ export class LoginPage implements OnInit {
       }).catch(
         (err) => {
           this.btnDesactivar = false;
-          this.mensaje.presentToast(this.translate.instant('login.errorLogin'), 'danger');
+          // this.mensaje.presentToast(this.translate.instant('login.errorLogin'), 'danger');
         });
-
-
   }
 
 
 
 
-  private async cargaDatos($event = null, mostrarLoading: boolean = true, cantidad: number = 7) {
+  private async cargaDatos( cantidad: number = 7) {
     try {
       await this.mensaje.presentLoading();
       const info: firebase.firestore.QuerySnapshot<firebase.firestore.DocumentData> =

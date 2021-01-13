@@ -6,7 +6,7 @@
     </ion-item>
 
 
-    <ion-item>
+    <ion-item *ngIf="this.authS.user.avatar">
         <ion-icon slot="start" src="assets/img/foto.svg"></ion-icon>
         <img [src]="this.authS.user.avatar" class="redondo">
     </ion-item>

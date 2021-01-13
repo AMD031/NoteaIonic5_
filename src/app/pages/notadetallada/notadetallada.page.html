@@ -26,14 +26,36 @@
   </ion-card>
 
 
+  <!-- ddddddddddddddd -->
+
+
+
+
+  <ion-card *ngIf="nota?.prioridad">
+    <ion-item>
+      <ion-icon class="claro" slot="start" src="assets/img/prioridad.svg"></ion-icon>
+      <ion-label><b><u>{{ "formularioNota.prioridad" | translate}}:</u></b></ion-label>
+    </ion-item>
+    
+    <ion-card-content >
+      {{ obtenerPrioridad(nota.prioridad)}}
+    </ion-card-content>
+  </ion-card>
+
+
+
+
+<!-- ddddddddddddddddddddddd -->
+
+
+
   <ion-card *ngIf="nota?.texto">
     <ion-item>
-
       <ion-icon class="claro" slot="start" src="assets/img/papel.svg"></ion-icon>
       <ion-label><b><u>{{ "listado.descripcion" | translate}}:</u></b></ion-label>
     </ion-item>
 
-    <ion-card-content *ngIf="nota?.texto">
+    <ion-card-content >
       {{nota?.texto}}
     </ion-card-content>
   </ion-card>

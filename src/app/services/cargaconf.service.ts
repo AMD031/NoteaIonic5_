@@ -58,9 +58,15 @@ export class CargaconfService {
       this.temaS.enableLight();
     }
 
-
   }
 
+  public urlNueva() {
+    if (this.preferencias.idioma === 'es' || this.preferencias.idioma === '') {
+      return 'assets/img/espana.svg';
+    } else {
+      return 'assets/img/estados-unidos.svg';
+    }
+  }
 
 
 }

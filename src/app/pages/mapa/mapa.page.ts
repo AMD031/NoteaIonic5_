@@ -4,6 +4,7 @@ import { Map, latLng, tileLayer, Layer, marker, LayerGroup, layerGroup } from 'l
 import { Coordenadas } from 'src/app/model/coordenadas';
 import { Nota } from 'src/app/model/nota';
 import { MapService } from 'src/app/services/map.service';
+import { MensajesService } from 'src/app/services/mensajes.service';
 // import { MapService } from 'src/app/services/map.service';
 
 @Component({
@@ -32,7 +33,8 @@ export class MapaPage implements OnInit {
   private markerGroup: LayerGroup = null;
   constructor(
     private mapS: MapService,
-    private modalController: ModalController
+    private modalController: ModalController,
+    private mensaje: MensajesService
     ) {
   }
 

@@ -36,7 +36,8 @@
         "hora":"Hora límite",
         "detalles": "Detalles",
         "noElementos": "No hay elementos",
-        "eliminar":"Eliminando nota"
+        "eliminar":"Eliminando nota",
+        "mas": "Más"
      },
      "formularioNota":{
         "cabecera" :"Añadir tarea",
@@ -52,7 +53,13 @@
         "errorGuardarNota": "Error guardando nota",
         "hora": "Hora límite",
         "btnFoto" :"Tomar foto",
-        "btnMapa" : "Mapa"
+        "btnMapa" : "Mapa",
+        "sinPrioridad":"Sin prioridad",
+        "prioridad":"Prioridad",
+        "minima":"Mínima",
+        "normal":"Normal",
+        "importante":"Importente",
+        "urgente":"Urgente"
      },
      "editarNota":{
         "cabecera" :"Editar tarea.",

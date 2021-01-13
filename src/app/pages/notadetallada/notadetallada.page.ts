@@ -3,6 +3,7 @@ import { Nota } from 'src/app/model/nota';
 import { MapaPage } from '../mapa/mapa.page';
 import * as moment from 'moment';
 import { ModalController } from '@ionic/angular';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-notadetallada',
@@ -12,7 +13,7 @@ import { ModalController } from '@ionic/angular';
 export class NotadetalladaPage implements OnInit {
   // tslint:disable-next-line: no-input-rename
   @Input('nota') nota: Nota;
-  constructor(private modal: ModalController) { }
+  constructor(private translate: TranslateService) { }
   ngOnInit() {
   }
 
@@ -31,6 +32,27 @@ export class NotadetalladaPage implements OnInit {
     }
   }
 
+
+  obtenerPrioridad(prioridad: any): string {
+
+    switch (prioridad) {
+      case '5':
+        return this.translate.instant('formularioNota.sinPrioridad');
+
+      case '4':
+        return this.translate.instant('formularioNota.minima');
+
+      case '3':
+        return this.translate.instant('formularioNota.normal');
+
+      case '2':
+        return this.translate.instant('formularioNota.importante');
+
+      case '1':
+        return this.translate.instant('formularioNota.urgente');
+    }
+
+  }
 
 
 

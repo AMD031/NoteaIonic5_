@@ -4,6 +4,7 @@ import { ModalController } from '@ionic/angular';
 import { TranslateService } from '@ngx-translate/core';
 // import { ElementoAlert } from 'src/app/model/elementoAlert';
 import { AuthService } from 'src/app/services/auth.service';
+import { CargaconfService } from 'src/app/services/cargaconf.service';
 import { MensajesService } from 'src/app/services/mensajes.service';
 
 
@@ -23,9 +24,12 @@ export class CabeceraComponent implements OnInit {
     private router: Router,
     private mensaje: MensajesService,
     private translate: TranslateService,
-    private modal: ModalController
+    private modal: ModalController,
+    public  conf: CargaconfService,
   ) {
+
   }
+
 
   public async logout() {
     try {
@@ -34,21 +38,24 @@ export class CabeceraComponent implements OnInit {
         this.router.navigate(['/login']);
       }
     } catch (error) {
-      await this.mensaje.presentToast(this.translate.instant('logout.errorLogout.'), 'danger');
-      console.log('login: ', error);
+      await this.mensaje.presentToast(this.translate.instant('logout.errorLogout'), 'danger');
+      // console.log("logout " + JSON.stringify(error));
     }
   }
 
 
 
-
-  ngOnInit() { }
-
-  cerrar(){
-    this.modal.dismiss();
+  ngOnInit() {
+    
   }
 
 
+
+  cerrar() {
+    this.modal.dismiss();
+  }
+
+  
 
 
 }

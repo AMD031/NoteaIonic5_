@@ -1,5 +1,4 @@
 import { Component, Sanitizer, ViewChild } from '@angular/core';
-import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { /*IonInfiniteScroll,*/ IonSearchbar, ModalController } from '@ionic/angular';
 import { TranslateService } from '@ngx-translate/core';
 import * as moment from 'moment';
@@ -52,8 +51,7 @@ export class Tab1Page {
     public translate: TranslateService,
     private conf: CargaconfService,
     private fotoGS: GestionfotoService,
-    private sanitizer: DomSanitizer
-  ) { }
+    ) { }
 
   @ViewChild(IonSearchbar) barraBusqueda: IonSearchbar;
   // @ViewChild(IonInfiniteScroll) infinito: IonInfiniteScroll;
@@ -169,6 +167,7 @@ export class Tab1Page {
     });
   }
 
+  
 
   public async borraNota(id: any) {
 
@@ -288,8 +287,8 @@ export class Tab1Page {
         checked: this.seleccionBuscar === 4 ? true : false
       },
     ],
-      'Cancelar',
-      'Aceptar',
+       this.translate.instant('AcCan.Cancelar'),
+       this.translate.instant('AcCan.Aceptar'),
       ''
     );
     // console.log('respuesta: ', resp);
@@ -321,10 +320,10 @@ export class Tab1Page {
           break;
       }
 
-    } else {
-      this.seleccionBuscar = 1;
+     } /* else {
+       this.seleccionBuscar = 1;
       this.buscarPor = 'texto';
-    }
+     }*/
   }
 
 
@@ -347,5 +346,26 @@ export class Tab1Page {
     };
   }
 
+
+  urlPrioridad(prioridad: any): string {
+
+    switch (prioridad) {
+      case '5':
+        return 'assets/img/five.svg';
+
+      case '4':
+        return 'assets/img/four.svg';
+
+      case '3':
+        return 'assets/img/three.svg';
+
+      case '2':
+        return 'assets/img/two.svg';
+
+      case '1':
+        return 'assets/img/one.svg';
+    }
+
+  }
 
 }
