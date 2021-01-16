@@ -18,6 +18,7 @@ export class FotoService {
       correctOrientation: true,
       // sourceType: this.camera.PictureSourceType.CAMERA
     };
+    
     return this.camera.getPicture(options);
   }
 

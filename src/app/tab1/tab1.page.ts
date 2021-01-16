@@ -26,7 +26,7 @@ export class Tab1Page {
   private paginado: number = 7;
   private carga: string;
   public criterio = '';
-  public cantidadNueva = 2;
+  public cantidadNueva = 0;
   public buscarPor: string = 'titulo';
   public fin: boolean = false;
   public seleccionBuscar: number = 1;
@@ -120,7 +120,7 @@ export class Tab1Page {
       this.notasS.ultimoDocumento = null;
       this.mensaje.hideLoading();
       this.mensaje.presentToast(this.translate.instant('cargarDatos.mensajeError'), 'danger');
-      console.log(err);
+      // console.log(err);
     }
   }
 

@@ -139,6 +139,9 @@
       "descripcion":"Descripción", 
       "fechaCreacion": "Posterior fecha Creación",
       "fechaLimite": "Posterior fecha Límite"
+     },
+     "camara": {
+        "error":"No se ha podido obtener imagen."
      }
 
 

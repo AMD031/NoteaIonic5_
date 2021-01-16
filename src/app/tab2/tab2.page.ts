@@ -254,7 +254,7 @@ export class Tab2Page {
       this.imagen = base64Image;
       this.nuevaFoto = true;
     } catch (err) {
-      this.mensaje.presentToast('Error', 'danger');
+      this.mensaje.presentToast( this.translate.instant('camara.error'), 'danger');
     }
 
   }
@@ -278,7 +278,7 @@ export class Tab2Page {
             resolve(res);
           });
       } catch (error) {
-        console.log(error);
+        // console.log(error);
       }
     });
   }
@@ -292,8 +292,8 @@ export class Tab2Page {
         nota: this.nota
       }
     });
-    modal.onDidDismiss().then(() => {
-    });
+    // modal.onDidDismiss().then(() => {
+    // });
     return await modal.present();
   }
 
